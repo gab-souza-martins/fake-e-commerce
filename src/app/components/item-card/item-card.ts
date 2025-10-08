@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { Item } from '../../types/item.type';
 
 @Component({
@@ -8,7 +8,7 @@ import { Item } from '../../types/item.type';
   styleUrl: './item-card.css',
 })
 export class ItemCard {
-  testItem = signal<Item>({
+  testItem = input<Item>({
     id: 0,
     title: 'Sapato',
     price: 2000,

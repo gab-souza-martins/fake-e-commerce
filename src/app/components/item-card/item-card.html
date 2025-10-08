@@ -1,13 +1,11 @@
 <div class="card-container">
-  <img src="test-shoe.jpeg" alt="Imagem de teste" />
+  <img [src]="testItem().image" alt="Imagem de teste" />
 
-  <p class="item-title">Sapato</p>
+  <p class="item-title">{{ testItem().title }}</p>
 
   <p class="item-description">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae assumenda maiores dolorum
-    reiciendis vero fugit corporis, fuga quia harum? Provident repudiandae quam unde nisi incidunt
-    beatae quisquam dicta eum ab!
+    {{ testItem().description }}
   </p>
 
-  <p class="item-price">R$ 2.000,00</p>
+  <p class="item-price">R$ {{ testItem().price }}</p>
 </div>

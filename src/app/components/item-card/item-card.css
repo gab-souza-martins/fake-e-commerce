@@ -17,6 +17,10 @@ p {
   margin: 0;
 }
 
+.item-title {
+  font-weight: semibold;
+}
+
 .item-description {
   font-size: 0.9rem;
   color: #555;
