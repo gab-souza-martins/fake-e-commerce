@@ -7,5 +7,7 @@
     {{ testItem().description }}
   </p>
 
-  <p class="item-price">R$ {{ testItem().price }}</p>
+  <p class="item-price">
+    {{ testItem().price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }}
+  </p>
 </div>
