@@ -1,10 +1,8 @@
-<h1>list</h1>
-
 @if (!itemList().length) {
 <p>Loading...</p>
 }
 
-<div>
+<div class="item-list">
   @for (item of itemList(); track item.id) {
   <app-item-card [item]="item" />
   }
