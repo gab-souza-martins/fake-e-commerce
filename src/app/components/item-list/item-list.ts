@@ -2,10 +2,11 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { FakeStore } from '../../services/fake-store';
 import { Item } from '../../types/item.type';
 import { catchError } from 'rxjs';
+import { ItemCard } from '../item-card/item-card';
 
 @Component({
   selector: 'app-item-list',
-  imports: [],
+  imports: [ItemCard],
   templateUrl: './item-list.html',
   styleUrl: './item-list.css',
 })

@@ -1,13 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ItemCard } from './components/item-card/item-card';
+import { ItemList } from './components/item-list/item-list';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ItemCard],
+  imports: [RouterOutlet, ItemList],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('fake-e-commerce');
-}
+export class App {}

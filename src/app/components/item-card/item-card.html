@@ -1,13 +1,13 @@
 <div class="card-container">
-  <img [src]="testItem().image" alt="Imagem de teste" />
+  <img [src]="item().image" alt="Imagem de teste" />
 
-  <p class="item-title">{{ testItem().title }}</p>
+  <p class="item-title">{{ item().title }}</p>
 
   <p class="item-description">
-    {{ testItem().description }}
+    {{ item().description }}
   </p>
 
   <p class="item-price">
-    {{ testItem().price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }}
+    {{ item().price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }}
   </p>
 </div>
