@@ -3,9 +3,9 @@
 
   <p class="item-title">{{ item().title }}</p>
 
-  <p class="item-description">
-    {{ item().description }}
-  </p>
+  <div class="rating">
+    <fa-icon [icon]="faStar" />
+  </div>
 
   <p class="item-price">
     {{ item().price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }}
