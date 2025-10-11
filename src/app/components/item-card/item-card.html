@@ -7,6 +7,8 @@
     @for (star of stars; track $index) {<fa-icon [icon]="faStar" />}
     <!--  -->
     @if (item().rating.rate % 1 !== 0) {<fa-icon [icon]="faHalfStar" />}
+    <!--  -->
+    @for (missingStar of missingStars; track $index) {<fa-icon [icon]="faEmptyStar" />}
   </div>
 
   <p class="item-price">
