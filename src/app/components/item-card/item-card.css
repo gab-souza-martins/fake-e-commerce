@@ -15,9 +15,18 @@ img {
   object-fit: cover;
 }
 
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
 fa-icon {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #ffc107;
+}
+.rating span {
+  font-size: 0.9rem;
+  color: #555;
 }
 
 p {
