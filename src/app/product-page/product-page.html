@@ -31,5 +31,10 @@
     <p class="price">
       {{ product().price.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
     </p>
+
+    <button class="cart-btn">
+      <fa-icon [icon]="faCart" />
+      Add to Cart
+    </button>
   </div>
 </div>

@@ -5,6 +5,7 @@ import { catchError } from 'rxjs';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar as fullStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { NgClass } from '@angular/common';
 
@@ -78,4 +79,6 @@ export class ProductPage {
   get missingStars() {
     return Array(Math.floor(5 - this.product().rating.rate)).fill(0);
   }
+
+  faCart = faCartShopping;
 }

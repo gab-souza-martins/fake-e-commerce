@@ -49,3 +49,21 @@ fa-icon {
   font-size: 2rem;
   font-weight: bold;
 }
+.cart-btn {
+  padding: 0.5em 1em;
+  background-color: #273be2;
+  border: none;
+  border-radius: 0.375em;
+  font-size: 1.25rem;
+  color: white;
+  cursor: pointer;
+}
+.cart-btn fa-icon {
+  color: inherit;
+}
+.cart-btn:hover {
+  background-color: #295be6;
+}
+.cart-btn:active {
+  background-color: #201ddb;
+}
