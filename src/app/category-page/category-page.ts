@@ -8,5 +8,5 @@ import { ItemList } from '../components/item-list/item-list';
   styleUrl: './category-page.css',
 })
 export class CategoryPage {
-  category = input.required<string>();
+  categoryName = input.required<string>();
 }
