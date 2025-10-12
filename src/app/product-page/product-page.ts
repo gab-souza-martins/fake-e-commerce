@@ -5,10 +5,12 @@ import { catchError } from 'rxjs';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar as fullStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-product-page',
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, NgClass],
   templateUrl: './product-page.html',
   styleUrl: './product-page.css',
 })
@@ -29,6 +31,10 @@ export class ProductPage {
     },
   });
 
+  flexRow = false;
+
+  constructor(private breakpointService: BreakpointObserver) {}
+
   ngOnInit(): void {
     this.fakeStore
       .getItems()
@@ -44,6 +50,13 @@ export class ProductPage {
           this.product.set(product);
         }
       });
+
+    this.breakpointService.observe(Breakpoints.Medium).subscribe((result) => {
+      this.flexRow = false;
+      if (result.matches) {
+        this.flexRow = true;
+      }
+    });
   }
 
   get capitalizedCategory() {

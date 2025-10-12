@@ -2,30 +2,34 @@
 <p>Loading...</p>
 }
 
-<div class="product-container">
+<div class="product-container" [ngClass]="{ row: flexRow }">
   <div class="img-container">
     <img [src]="product().image" [alt]="product().title" />
   </div>
 
-  <h2>{{ product().title }}</h2>
-  <p class="category">{{ capitalizedCategory }}</p>
+  <div class="info-container">
+    <h2>{{ product().title }}</h2>
 
-  <p class="description">{{ product().description }}</p>
+    <p class="category">{{ capitalizedCategory }}</p>
 
-  <div class="rating">
-    <div class="stars">
-      @for (star of stars; track $index) {<fa-icon [icon]="faStar" />}
-      <!--  -->
-      @if (product().rating.rate % 1 !== 0) {<fa-icon [icon]="faHalfStar" />}
-      <!--  -->
-      @for (missingStar of missingStars; track $index) {<fa-icon [icon]="faEmptyStar" />}
+    <p class="description">{{ product().description }}</p>
+
+    <div class="rating">
+      <div class="stars">
+        @for (star of stars; track $index) {<fa-icon [icon]="faStar" />}
+        <!--  -->
+        @if (product().rating.rate % 1 !== 0) {<fa-icon [icon]="faHalfStar" />}
+        <!--  -->
+        @for (missingStar of missingStars; track $index) {<fa-icon [icon]="faEmptyStar" />}
+      </div>
+
+      <span>{{ product().rating.rate }}</span>
+
+      <span> ({{ product().rating.count }}) </span>
     </div>
 
-    <span>{{ product().rating.rate }}</span>
-    <span> ({{ product().rating.count }}) </span>
+    <p class="price">
+      {{ product().price.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+    </p>
   </div>
-
-  <p class="price">
-    {{ product().price.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
-  </p>
 </div>
