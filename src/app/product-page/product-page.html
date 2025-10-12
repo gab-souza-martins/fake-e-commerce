@@ -1,25 +1,31 @@
-<div class="img-container">
-  <img [src]="product().image" [alt]="product().title" />
-</div>
+@if (product().title === '') {
+<p>Loading...</p>
+}
 
-<h2>{{ product().title }}</h2>
-<p class="category">{{ capitalizedCategory }}</p>
-
-<p class="description">{{ product().description }}</p>
-
-<div class="rating">
-  <div class="stars">
-    @for (star of stars; track $index) {<fa-icon [icon]="faStar" />}
-    <!--  -->
-    @if (product().rating.rate % 1 !== 0) {<fa-icon [icon]="faHalfStar" />}
-    <!--  -->
-    @for (missingStar of missingStars; track $index) {<fa-icon [icon]="faEmptyStar" />}
+<div class="product-container">
+  <div class="img-container">
+    <img [src]="product().image" [alt]="product().title" />
   </div>
 
-  <span>{{ product().rating.rate }}</span>
-  <span> ({{ product().rating.count }}) </span>
-</div>
+  <h2>{{ product().title }}</h2>
+  <p class="category">{{ capitalizedCategory }}</p>
 
-<p class="price">
-  {{ product().price.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
-</p>
+  <p class="description">{{ product().description }}</p>
+
+  <div class="rating">
+    <div class="stars">
+      @for (star of stars; track $index) {<fa-icon [icon]="faStar" />}
+      <!--  -->
+      @if (product().rating.rate % 1 !== 0) {<fa-icon [icon]="faHalfStar" />}
+      <!--  -->
+      @for (missingStar of missingStars; track $index) {<fa-icon [icon]="faEmptyStar" />}
+    </div>
+
+    <span>{{ product().rating.rate }}</span>
+    <span> ({{ product().rating.count }}) </span>
+  </div>
+
+  <p class="price">
+    {{ product().price.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+  </p>
+</div>
