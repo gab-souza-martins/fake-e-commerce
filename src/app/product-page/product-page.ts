@@ -51,12 +51,14 @@ export class ProductPage {
         }
       });
 
-    this.breakpointService.observe(Breakpoints.Medium).subscribe((result) => {
-      this.flexRow = false;
-      if (result.matches) {
-        this.flexRow = true;
-      }
-    });
+    this.breakpointService
+      .observe([Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge])
+      .subscribe((result) => {
+        this.flexRow = false;
+        if (result.matches) {
+          this.flexRow = true;
+        }
+      });
   }
 
   get capitalizedCategory() {
