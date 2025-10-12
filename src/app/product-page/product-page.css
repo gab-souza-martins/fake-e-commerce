@@ -1,3 +1,11 @@
+.img-container {
+  width: clamp(300px, 500px, 50%);
+  margin: auto;
+}
+img {
+  width: 100%;
+}
+
 .rating {
   display: flex;
   align-items: center;
