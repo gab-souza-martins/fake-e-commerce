@@ -2,12 +2,12 @@
 <p>Loading...</p>
 }
 
-<div class="product-container" [ngClass]="{ row: flexRow }">
+<div class="product-container" [ngClass]="{ breakpointMd: flexRow }">
   <div class="img-container">
     <img [src]="product().image" [alt]="product().title" />
   </div>
 
-  <div class="info-container">
+  <div class="info-container" [ngClass]="{ breakpointMd: flexRow }">
     <h2>{{ product().title }}</h2>
 
     <p class="category">{{ capitalizedCategory }}</p>
