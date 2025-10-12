@@ -46,6 +46,14 @@ export class ProductPage {
       });
   }
 
+  get capitalizedCategory() {
+    const categoryWords: string[] = this.product().category.split(' ');
+
+    return categoryWords
+      .map((i) => (i.length > 0 ? i[0].toUpperCase() + i.substring(1) : ''))
+      .join(' ');
+  }
+
   faStar = fullStar;
   faHalfStar = faStarHalfStroke;
   faEmptyStar = emptyStar;
