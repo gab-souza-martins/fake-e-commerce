@@ -6,6 +6,12 @@ img {
   width: 100%;
 }
 
+.category {
+  font-size: 1.25rem;
+  font-weight: semibold;
+  color: #555;
+}
+
 .rating {
   display: flex;
   align-items: center;
@@ -16,4 +22,10 @@ fa-icon {
 }
 .rating span {
   color: #555;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
 }
