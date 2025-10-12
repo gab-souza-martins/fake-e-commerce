@@ -28,7 +28,7 @@ export class ItemList implements OnInit {
         if (this.filter() === '' || !this.filter) {
           this.itemList.set(i);
         } else {
-          this.itemList.set(i.filter((p) => p.category === this.filter().toLowerCase()));
+          this.itemList.set(i.filter((p) => p.category === this.filter()));
         }
       });
   }
