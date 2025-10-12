@@ -2,10 +2,13 @@ import { Component, inject, input, signal } from '@angular/core';
 import { Item } from '../types/item.type';
 import { FakeStore } from '../services/fake-store';
 import { catchError } from 'rxjs';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faStar as fullStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
+import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-product-page',
-  imports: [],
+  imports: [FontAwesomeModule],
   templateUrl: './product-page.html',
   styleUrl: './product-page.css',
 })
@@ -41,5 +44,15 @@ export class ProductPage {
           this.product.set(product);
         }
       });
+  }
+
+  faStar = fullStar;
+  faHalfStar = faStarHalfStroke;
+  faEmptyStar = emptyStar;
+  get stars() {
+    return Array(Math.floor(this.product().rating.rate)).fill(0);
+  }
+  get missingStars() {
+    return Array(Math.floor(5 - this.product().rating.rate)).fill(0);
   }
 }
