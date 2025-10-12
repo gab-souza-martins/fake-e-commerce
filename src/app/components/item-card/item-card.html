@@ -3,6 +3,7 @@
 
   <div class="top">
     <p class="item-title">{{ item().title }}</p>
+
     <div class="rating">
       <div class="stars">
         @for (star of stars; track $index) {<fa-icon [icon]="faStar" />}
@@ -11,12 +12,13 @@
         <!--  -->
         @for (missingStar of missingStars; track $index) {<fa-icon [icon]="faEmptyStar" />}
       </div>
+
       <span>{{ item().rating.rate }}</span>
       <span> ({{ item().rating.count }}) </span>
     </div>
   </div>
 
   <p class="item-price">
-    {{ item().price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }}
+    {{ item().price.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
   </p>
 </div>
