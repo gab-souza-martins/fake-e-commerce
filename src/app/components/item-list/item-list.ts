@@ -1,4 +1,4 @@
-import { Component, inject, input, OnInit, signal } from '@angular/core';
+import { Component, computed, effect, inject, input, OnInit, signal } from '@angular/core';
 import { FakeStore } from '../../services/fake-store';
 import { Item } from '../../types/item.type';
 import { catchError } from 'rxjs';
@@ -10,26 +10,32 @@ import { ItemCard } from '../item-card/item-card';
   templateUrl: './item-list.html',
   styleUrl: './item-list.css',
 })
-export class ItemList implements OnInit {
+export class ItemList {
   fakeStore = inject(FakeStore);
   itemList = signal<Array<Item>>([]);
   filter = input.required<string>();
 
-  ngOnInit(): void {
-    this.fakeStore
-      .getItems()
-      .pipe(
-        catchError((e) => {
-          console.log(e);
-          throw e;
-        })
-      )
-      .subscribe((i) => {
-        if (this.filter() === '' || !this.filter) {
+  filteredItems = computed(() => {
+    const c = this.filter()?.trim();
+    if (!c) {
+      return this.itemList();
+    }
+    return this.itemList().filter((p) => p.category === c);
+  });
+
+  constructor() {
+    effect(() => {
+      this.fakeStore
+        .getItems()
+        .pipe(
+          catchError((e) => {
+            console.log(e);
+            throw e;
+          })
+        )
+        .subscribe((i) => {
           this.itemList.set(i);
-        } else {
-          this.itemList.set(i.filter((p) => p.category === this.filter()));
-        }
-      });
+        });
+    });
   }
 }

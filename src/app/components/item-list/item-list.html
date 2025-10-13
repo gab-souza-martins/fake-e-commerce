@@ -1,9 +1,9 @@
-@if (!itemList().length) {
+@if (!filteredItems().length) {
 <p>Loading...</p>
 }
 
 <div class="item-list">
-  @for (item of itemList(); track item.id) {
+  @for (item of filteredItems(); track item.id) {
   <app-item-card [item]="item" />
   }
 </div>

@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core';
 import { ItemList } from '../components/item-list/item-list';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-category-page',
