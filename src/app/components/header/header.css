@@ -18,7 +18,7 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  width: clamp(150px, 30vh, 500px);
+  width: clamp(150px, 300px, 70vw);
   height: 100vh;
   border: 1px solid #aaa;
 }
