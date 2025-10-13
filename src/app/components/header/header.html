@@ -4,7 +4,7 @@
   </h1>
 
   <nav>
-    <div class="mobile-nav-container">
+    <div class="mobile-nav-container" [ngClass]="{ invisible: desktopNavigationActive }">
       <ul class="navbar nav-mobile">
         <li><a routerLink="/category/men's clothing">Men's clothing</a></li>
         <li><a routerLink="/category/women's clothing">Women's clothing</a></li>
@@ -13,7 +13,7 @@
       </ul>
     </div>
 
-    <ul class="navbar nav-desktop">
+    <ul class="navbar nav-desktop" [ngClass]="{ invisible: !desktopNavigationActive }">
       <li><a routerLink="/category/men's clothing">Men's clothing</a></li>
       <li><a routerLink="/category/women's clothing">Women's clothing</a></li>
       <li><a routerLink="/category/jewelery">Jewelery</a></li>
