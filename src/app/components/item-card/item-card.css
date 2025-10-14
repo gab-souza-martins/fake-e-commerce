@@ -5,7 +5,7 @@
   justify-content: space-between;
   min-height: 100%;
   padding: 0.75em;
-  border: 1px solid #aaa;
+  border: 1px solid var(--light-gray);
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   cursor: pointer;
   transition: 150ms box-shadow ease-in-out;
@@ -35,7 +35,7 @@ fa-icon {
 }
 .rating span {
   font-size: 0.9rem;
-  color: #555;
+  color: var(--gray-color);
 }
 
 p {
@@ -47,5 +47,4 @@ p {
 .item-price {
   font-size: 1.5rem;
   font-weight: semibold;
-  color: #222;
 }
