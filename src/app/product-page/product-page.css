@@ -1,6 +1,7 @@
 .product-container {
   max-width: 450px;
   margin: auto;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,6 +14,9 @@
 }
 
 .img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: clamp(300px, 500px, 40%);
 }
 img {
