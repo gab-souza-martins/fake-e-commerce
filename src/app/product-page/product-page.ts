@@ -8,10 +8,11 @@ import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { NgClass } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-page',
-  imports: [FontAwesomeModule, NgClass],
+  imports: [FontAwesomeModule, NgClass, RouterLink],
   templateUrl: './product-page.html',
   styleUrl: './product-page.css',
 })

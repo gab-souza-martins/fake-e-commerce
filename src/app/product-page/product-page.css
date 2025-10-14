@@ -37,6 +37,7 @@ img {
   font-size: 1.25rem;
   font-weight: semibold;
   color: #555;
+  text-decoration: none;
 }
 
 .rating {

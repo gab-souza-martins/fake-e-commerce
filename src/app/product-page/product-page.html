@@ -10,7 +10,11 @@
   <div class="info-container" [ngClass]="{ breakpointMd: flexRow }">
     <h2>{{ product().title }}</h2>
 
-    <p class="category">{{ capitalizedCategory }}</p>
+    <p>
+      <a class="category" routerLink="/category/{{ product().category }}">{{
+        capitalizedCategory
+      }}</a>
+    </p>
 
     <p class="description">{{ product().description }}</p>
 
