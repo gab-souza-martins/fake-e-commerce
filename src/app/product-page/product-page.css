@@ -41,7 +41,7 @@ img {
   gap: 0.25rem;
 }
 fa-icon {
-  color: #ffc107;
+  color: var(--yellow-color);
 }
 .rating span {
   color: #555;
@@ -53,7 +53,7 @@ fa-icon {
 }
 .cart-btn {
   padding: 0.5em 1em;
-  background-color: #273be2;
+  background-color: var(--primary-color);
   border: none;
   border-radius: 0.375em;
   font-size: 1.25rem;
@@ -65,8 +65,8 @@ fa-icon {
   color: inherit;
 }
 .cart-btn:hover {
-  background-color: #295be6;
+  background-color: var(--primary-color-light);
 }
 .cart-btn:active {
-  background-color: #201ddb;
+  background-color: var(--primary-color-dark);
 }

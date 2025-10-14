@@ -31,7 +31,7 @@ img {
 }
 fa-icon {
   font-size: 0.8rem;
-  color: #ffc107;
+  color: var(--yellow-color);
 }
 .rating span {
   font-size: 0.9rem;

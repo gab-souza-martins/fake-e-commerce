@@ -43,12 +43,6 @@ header {
   cursor: pointer;
   transition: all 150ms ease-in-out;
 }
-.nav-btn:hover {
-  color: #295be6;
-}
-.nav-btn:active {
-  color: #201ddb;
-}
 
 .btn-open-mobile-nav {
   width: 2rem;
@@ -87,9 +81,12 @@ a {
   text-decoration: none;
   transition: all 150ms ease-in-out;
 }
-.nav-link:hover {
-  color: #295be6;
+
+.nav-link:hover,
+.nav-btn:hover {
+  color: var(--primary-color-light);
 }
-.nav-link:active {
-  color: #201ddb;
+.nav-link:active,
+.nav-btn:active {
+  color: var(--primary-color-dark);
 }
