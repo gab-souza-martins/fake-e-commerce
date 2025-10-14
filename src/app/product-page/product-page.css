@@ -39,6 +39,12 @@ img {
   color: var(--gray-color);
   text-decoration: none;
 }
+.category:hover {
+  color: var(--light-gray);
+}
+.category:active {
+  color: var(--dark-gray);
+}
 
 .rating {
   display: flex;
