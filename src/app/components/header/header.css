@@ -17,8 +17,6 @@ header {
   border-bottom: 1px solid #aaa;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
-header.desktop-layout {
-}
 
 .btn-nav-mobile {
   width: 2rem;
@@ -29,11 +27,18 @@ header.desktop-layout {
   background-color: white;
   padding: 1rem;
   position: absolute;
-  top: 0rem;
+  top: 0;
   left: 0;
   width: clamp(150px, 300px, 70vw);
   height: 100vh;
   border: 1px solid #aaa;
+  transform: translateX(-15rem);
+  visibility: hidden;
+  transition: 500ms transform ease-in-out;
+}
+.mobile-nav-container.shown {
+  transform: translateX(0rem);
+  visibility: visible;
 }
 
 ul {

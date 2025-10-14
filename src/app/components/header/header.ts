@@ -15,6 +15,7 @@ export class Header {
   faBars = faBars;
 
   desktopNavigationActive = false;
+  mobileNavigationActive = false;
 
   constructor(private breakpointService: BreakpointObserver) {}
 
@@ -25,6 +26,7 @@ export class Header {
         this.desktopNavigationActive = false;
         if (result.matches) {
           this.desktopNavigationActive = true;
+          this.mobileNavigationActive = false;
         }
       });
   }

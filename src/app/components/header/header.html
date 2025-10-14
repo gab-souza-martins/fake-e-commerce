@@ -3,6 +3,7 @@
     aria-label="Open navigation"
     class="btn-nav-mobile"
     [ngClass]="{ invisible: desktopNavigationActive }"
+    (click)="mobileNavigationActive = true"
   >
     <fa-icon [icon]="faBars" />
   </button>
@@ -12,7 +13,10 @@
   </h1>
 
   <nav>
-    <div class="mobile-nav-container" [ngClass]="{ invisible: desktopNavigationActive }">
+    <div
+      class="mobile-nav-container"
+      [ngClass]="{ shown: mobileNavigationActive, invisible: desktopNavigationActive }"
+    >
       <ul class="navbar nav-mobile">
         <li><a routerLink="/category/men's clothing">Men's clothing</a></li>
         <li><a routerLink="/category/women's clothing">Women's clothing</a></li>
