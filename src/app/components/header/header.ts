@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { NgClass } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faX } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +13,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 })
 export class Header {
   faBars = faBars;
+  faX = faX;
 
   desktopNavigationActive = false;
   mobileNavigationActive = false;

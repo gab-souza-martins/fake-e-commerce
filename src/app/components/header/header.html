@@ -17,6 +17,13 @@
       class="mobile-nav-container"
       [ngClass]="{ shown: mobileNavigationActive, invisible: desktopNavigationActive }"
     >
+      <button
+        aria-label="Close navigation"
+        class="btn-close-mobile-nav"
+        (click)="mobileNavigationActive = false"
+      >
+        <fa-icon [icon]="faX" />
+      </button>
       <ul class="navbar nav-mobile">
         <li><a routerLink="/category/men's clothing">Men's clothing</a></li>
         <li><a routerLink="/category/women's clothing">Women's clothing</a></li>
