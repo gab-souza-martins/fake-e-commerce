@@ -48,6 +48,7 @@ header {
   top: 1rem;
   right: 1rem;
   cursor: pointer;
+  transition: all 150ms ease-in-out;
 }
 .btn-close-mobile-nav:hover {
   color: #295be6;
@@ -78,9 +79,9 @@ a {
   text-decoration: none;
   transition: all 150ms ease-in-out;
 }
-a:hover {
+.nav-link:hover {
   color: #295be6;
 }
-a:active {
+.nav-link:active {
   color: #201ddb;
 }
