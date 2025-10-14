@@ -1,7 +1,7 @@
 <header>
   <button
     aria-label="Open navigation"
-    class="btn-nav-mobile"
+    class="nav-btn btn-open-mobile-nav"
     [ngClass]="{ invisible: desktopNavigationActive }"
     (click)="mobileNavigationActive = true"
   >
@@ -19,7 +19,7 @@
     >
       <button
         aria-label="Close navigation"
-        class="btn-close-mobile-nav"
+        class="nav-btn btn-close-mobile-nav"
         (click)="mobileNavigationActive = false"
       >
         <fa-icon [icon]="faX" />

@@ -18,11 +18,6 @@ header {
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
-.btn-nav-mobile {
-  width: 2rem;
-  height: 2rem;
-}
-
 .mobile-nav-container {
   background-color: white;
   padding: 1rem;
@@ -41,6 +36,25 @@ header {
   visibility: visible;
 }
 
+.nav-btn {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+.nav-btn:hover {
+  color: #295be6;
+}
+.nav-btn:active {
+  color: #201ddb;
+}
+
+.btn-open-mobile-nav {
+  width: 2rem;
+  height: 2rem;
+}
+
 .btn-close-mobile-nav {
   background: none;
   border: none;
@@ -49,12 +63,6 @@ header {
   right: 1rem;
   cursor: pointer;
   transition: all 150ms ease-in-out;
-}
-.btn-close-mobile-nav:hover {
-  color: #295be6;
-}
-.btn-close-mobile-nav:active {
-  color: #201ddb;
 }
 
 ul {
