@@ -12,7 +12,7 @@
   </h1>
 
   <nav>
-    <div class="mobile-nav-container invisible">
+    <div class="mobile-nav-container" [ngClass]="{ invisible: desktopNavigationActive }">
       <ul class="navbar nav-mobile">
         <li><a routerLink="/category/men's clothing">Men's clothing</a></li>
         <li><a routerLink="/category/women's clothing">Women's clothing</a></li>

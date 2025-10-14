@@ -5,6 +5,7 @@
 header {
   display: grid;
   grid-template-columns: 1fr 2fr 6fr 2fr;
+  gap: 2rem;
   align-items: center;
   position: sticky;
   top: 0;
@@ -15,6 +16,8 @@ header {
   width: 100vw;
   border-bottom: 1px solid #aaa;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+header.desktop-layout {
 }
 
 .btn-nav-mobile {
