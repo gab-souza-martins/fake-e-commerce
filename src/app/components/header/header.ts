@@ -2,14 +2,18 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { NgClass } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, NgClass],
+  imports: [RouterLink, NgClass, FontAwesomeModule],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
 export class Header {
+  faBars = faBars;
+
   desktopNavigationActive = false;
 
   constructor(private breakpointService: BreakpointObserver) {}
