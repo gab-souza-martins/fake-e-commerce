@@ -3,6 +3,9 @@
   --primary-color-light: #295be6;
   --primary-color-dark: #201ddb;
   --yellow-color: #ffc107;
+  --gray-color: #555;
+  --light-gray: #aaa;
+  --dark-gray: #222;
 }
 
 * {
