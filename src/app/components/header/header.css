@@ -3,10 +3,6 @@
 }
 
 header {
-  display: grid;
-  grid-template-columns: 1fr 2fr 6fr 2fr;
-  gap: 2rem;
-  align-items: center;
   position: sticky;
   top: 0;
   left: 0;
@@ -16,6 +12,12 @@ header {
   width: 100vw;
   border-bottom: 1px solid var(--light-gray);
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr 1fr;
+  align-items: center;
+  gap: 2rem;
 }
 
 .mobile-nav-container {
@@ -36,17 +38,17 @@ header {
   visibility: visible;
 }
 
+.btn {
+  width: 2rem;
+  height: 2rem;
+}
+
 .nav-btn {
   font-size: 1.2rem;
   background: none;
   border: none;
   cursor: pointer;
   transition: all 150ms ease-in-out;
-}
-
-.btn-open-mobile-nav {
-  width: 2rem;
-  height: 2rem;
 }
 
 .btn-close-mobile-nav {

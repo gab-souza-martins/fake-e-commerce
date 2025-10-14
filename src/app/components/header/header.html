@@ -1,30 +1,27 @@
 <header>
-  <button
-    aria-label="Open navigation"
-    class="nav-btn btn-open-mobile-nav"
-    [ngClass]="{ invisible: desktopNavigationActive }"
-    (click)="mobileNavigationActive = true"
-  >
-    <fa-icon [icon]="faBars" />
-  </button>
-
-  <h1>
-    <a routerLink="">Shop</a>
-  </h1>
-
   <nav>
+    <button
+      aria-label="Open navigation"
+      class="btn nav-btn btn-open-mobile-nav"
+      [ngClass]="{ invisible: desktopNavigationActive }"
+      (click)="mobileNavigationActive = true"
+    >
+      <fa-icon [icon]="faBars" />
+    </button>
+    <h1>
+      <a routerLink="">Shop</a>
+    </h1>
     <div
       class="mobile-nav-container"
       [ngClass]="{ shown: mobileNavigationActive, invisible: desktopNavigationActive }"
     >
       <button
         aria-label="Close navigation"
-        class="nav-btn btn-close-mobile-nav"
+        class="btn nav-btn btn-close-mobile-nav"
         (click)="mobileNavigationActive = false"
       >
         <fa-icon [icon]="faX" />
       </button>
-
       <ul class="navbar nav-mobile">
         <li><a class="nav-link" routerLink="/category/men's clothing">Men's clothing</a></li>
         <li><a class="nav-link" routerLink="/category/women's clothing">Women's clothing</a></li>
@@ -32,12 +29,14 @@
         <li><a class="nav-link" routerLink="/category/electronics">Electronics</a></li>
       </ul>
     </div>
-
     <ul class="navbar nav-desktop" [ngClass]="{ invisible: !desktopNavigationActive }">
       <li><a class="nav-link" routerLink="/category/men's clothing">Men's clothing</a></li>
       <li><a class="nav-link" routerLink="/category/women's clothing">Women's clothing</a></li>
       <li><a class="nav-link" routerLink="/category/jewelery">Jewelery</a></li>
       <li><a class="nav-link" routerLink="/category/electronics">Electronics</a></li>
     </ul>
+    <button class="btn">
+      <fa-icon [icon]="faCart" />
+    </button>
   </nav>
 </header>
