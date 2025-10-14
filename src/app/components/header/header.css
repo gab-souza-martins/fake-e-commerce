@@ -41,6 +41,21 @@ header {
   visibility: visible;
 }
 
+.btn-close-mobile-nav {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+.btn-close-mobile-nav:hover {
+  color: #295be6;
+}
+.btn-close-mobile-nav:active {
+  color: #201ddb;
+}
+
 ul {
   list-style: none;
 }
@@ -48,6 +63,7 @@ ul {
   display: flex;
 }
 .nav-mobile {
+  margin-top: 2rem;
   align-items: start;
   flex-direction: column;
   gap: 1rem;
