@@ -1,5 +1,6 @@
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
@@ -22,4 +23,20 @@ img {
 }
 .price {
   font-weight: bold;
+}
+
+.btn {
+  width: 1rem;
+  height: 1rem;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+.btn:hover {
+  color: var(--rose-color-light);
+}
+.btn:active {
+  color: var(--rose-color-dark);
 }
