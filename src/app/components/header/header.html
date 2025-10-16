@@ -49,9 +49,17 @@
 
     <div class="off-grid cart-container" [ngClass]="{ shown: cartOpen }">
       @for (item of cartItems; track item.id) {<app-cart-item [item]="item" />}
+      <!--  -->
+      @if (!cartItems||cartItems.length === 0){
+      <p class="empty-message">Your cart is empty</p>
+      }
+      <!--  -->
+      @if (cartItems&&cartItems.length > 0){
       <button class="btn btn-clear-cart" (click)="clearCart()">
-        <fa-icon [icon]="faTrash" /> Clear cart
+        <fa-icon [icon]="faTrash" />
+        Clear cart
       </button>
+      }
     </div>
   </nav>
 </header>
