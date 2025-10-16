@@ -19,16 +19,19 @@ nav.desktopLayout {
   grid-template-columns: 1fr 6fr 1fr;
 }
 
-.mobile-nav-container {
+.off-grid {
   visibility: hidden;
   background-color: white;
   padding: 1rem;
   position: absolute;
+  border: 1px solid var(--light-gray);
+}
+
+.mobile-nav-container {
   top: 0;
   left: 0;
   width: clamp(150px, 300px, 70vw);
   height: 100vh;
-  border: 1px solid var(--light-gray);
   transform: translateX(-18rem);
   transition: 500ms;
 }
@@ -37,18 +40,12 @@ nav.desktopLayout {
 }
 
 .cart-container {
-  visibility: hidden;
-  background-color: white;
-  padding: 1rem;
-  position: absolute;
   top: 3rem;
   right: 1rem;
   width: clamp(150px, 300px, 30vw);
-  border: 1px solid var(--light-gray);
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   transform: scale(0);
   transition: 200ms ease-in-out;
-  z-index: 1001;
 }
 .cart-container.shown {
   transform: scale(1);
