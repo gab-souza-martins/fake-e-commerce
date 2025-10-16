@@ -95,6 +95,5 @@ export class ProductPage {
     newCart.push({ id: crypto.randomUUID(), itemInfo: this.product() });
 
     this.cartStorage.setCart(newCart);
-    console.log(this.cartStorage.getCart());
   }
 }
