@@ -1,1 +1,11 @@
-<p>cart-item works!</p>
+<div class="container">
+  <div class="img-container">
+    <img [src]="item().itemInfo.image" [alt]="item().itemInfo.title" />
+  </div>
+  <div class="item-text">
+    <p class="title">{{ item().itemInfo.title }}</p>
+    <p class="price">
+      {{ item().itemInfo.price.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+    </p>
+  </div>
+</div>
