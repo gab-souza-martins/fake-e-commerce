@@ -40,6 +40,9 @@
 
     <button aria-label="See cart" class="btn" (click)="cartOpen = !cartOpen">
       <fa-icon [icon]="faCart" />
+
+      @if (cartItems&&cartItems.length > 0) {<span class="cart-badge"> {{ cartItems.length }} </span
+      >}
     </button>
 
     <div class="off-grid cart-container" [ngClass]="{ shown: cartOpen }">
