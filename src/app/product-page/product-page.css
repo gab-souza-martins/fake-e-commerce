@@ -52,7 +52,7 @@ img {
   gap: 0.25rem;
 }
 fa-icon {
-  color: var(--yellow-color);
+  color: var(--amber-color);
 }
 .rating span {
   color: var(--gray-color);
