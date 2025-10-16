@@ -43,7 +43,7 @@
     </button>
 
     <div class="off-grid cart-container" [ngClass]="{ shown: cartOpen }">
-      This is the cart
+      @for (item of cartItems; track item.id) {<app-cart-item [item]="item" />}
       <button class="btn btn-clear-cart" (click)="clearCart()">
         <fa-icon [icon]="faTrash" /> Clear cart
       </button>

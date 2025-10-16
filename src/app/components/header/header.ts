@@ -5,10 +5,11 @@ import { NgClass } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBars, faX, faCartShopping, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { CartStorage } from '../../services/cart-storage';
+import { CartItemComponent } from '../cart-item/cart-item';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, NgClass, FontAwesomeModule],
+  imports: [RouterLink, NgClass, FontAwesomeModule, CartItemComponent],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
@@ -38,5 +39,9 @@ export class Header {
 
   clearCart(): void {
     this.cartStorage.clearCart();
+  }
+
+  get cartItems() {
+    return this.cartStorage.getCart();
   }
 }
