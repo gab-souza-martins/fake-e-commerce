@@ -1,1 +1,1 @@
-<p>checkout-page works!</p>
+@for (item of cartItems; track item.id) {<app-cart-item [item]="item" />}
