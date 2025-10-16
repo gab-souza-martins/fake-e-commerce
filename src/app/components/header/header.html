@@ -2,7 +2,7 @@
   <nav [ngClass]="{ desktopLayout: desktopNavigationActive }">
     <button
       aria-label="Open navigation"
-      class="btn nav-btn btn-open-mobile-nav"
+      class="btn btn-open-mobile-nav"
       [ngClass]="{ invisible: desktopNavigationActive }"
       (click)="mobileNavigationActive = true"
     >
@@ -18,7 +18,7 @@
     >
       <button
         aria-label="Close navigation"
-        class="btn nav-btn btn-close-mobile-nav"
+        class="btn btn-close-mobile-nav"
         (click)="mobileNavigationActive = false"
       >
         <fa-icon [icon]="faX" />
