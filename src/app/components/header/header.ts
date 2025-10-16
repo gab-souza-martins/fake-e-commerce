@@ -3,7 +3,8 @@ import { RouterLink } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { NgClass } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBars, faX, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faX, faCartShopping, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { CartStorage } from '../../services/cart-storage';
 
 @Component({
   selector: 'app-header',
@@ -15,12 +16,13 @@ export class Header {
   faBars = faBars;
   faX = faX;
   faCart = faCartShopping;
+  faTrash = faTrash;
 
   desktopNavigationActive = false;
   mobileNavigationActive = false;
   cartOpen = false;
 
-  constructor(private breakpointService: BreakpointObserver) {}
+  constructor(private breakpointService: BreakpointObserver, private cartStorage: CartStorage) {}
 
   ngOnInit(): void {
     this.breakpointService
@@ -32,5 +34,9 @@ export class Header {
           this.mobileNavigationActive = false;
         }
       });
+  }
+
+  clearCart(): void {
+    this.cartStorage.clearCart();
   }
 }

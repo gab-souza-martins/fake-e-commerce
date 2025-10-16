@@ -67,6 +67,12 @@ nav.desktopLayout {
   right: 1rem;
 }
 
+.btn-clear-cart {
+  width: auto;
+  height: auto;
+  font-size: 0.9rem;
+}
+
 a {
   color: inherit;
   text-decoration: none;
