@@ -71,6 +71,7 @@ nav.desktopLayout {
   width: auto;
   height: auto;
   font-size: 0.9rem;
+  color: var(--rose-color);
 }
 
 a {
@@ -86,6 +87,13 @@ a {
 .nav-link:active,
 .btn:active {
   color: var(--primary-color-dark);
+}
+
+.btn-clear-cart:hover {
+  color: var(--rose-color-light);
+}
+.btn-clear-cart:active {
+  color: var(--rose-color-dark);
 }
 
 ul {
