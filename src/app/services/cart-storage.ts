@@ -5,7 +5,7 @@ import { CartItem } from '../types/cart-item.type';
   providedIn: 'root',
 })
 export class CartStorage {
-  setCart(value: CartItem): void {
+  setCart(value: CartItem[]): void {
     try {
       localStorage.setItem('localCart', JSON.stringify(value));
     } catch (e) {

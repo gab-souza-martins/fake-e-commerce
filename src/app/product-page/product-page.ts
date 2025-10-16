@@ -9,6 +9,8 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { CartStorage } from '../services/cart-storage';
+import { CartItem } from '../types/cart-item.type';
 
 @Component({
   selector: 'app-product-page',
@@ -17,6 +19,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './product-page.css',
 })
 export class ProductPage {
+  constructor(private breakpointService: BreakpointObserver, private cartStorage: CartStorage) {}
+
   productId = input.required<string>();
 
   fakeStore = inject(FakeStore);
@@ -34,8 +38,6 @@ export class ProductPage {
   });
 
   flexRow = false;
-
-  constructor(private breakpointService: BreakpointObserver) {}
 
   ngOnInit(): void {
     this.fakeStore
@@ -82,4 +84,17 @@ export class ProductPage {
   }
 
   faCart = faCartShopping;
+
+  addToCart(): void {
+    const currentCart: CartItem[] | null = this.cartStorage.getCart();
+    let newCart: CartItem[] = [];
+
+    if (currentCart) {
+      newCart = currentCart;
+    }
+    newCart.push({ id: crypto.randomUUID(), itemInfo: this.product() });
+
+    this.cartStorage.setCart(newCart);
+    console.log(this.cartStorage.getCart());
+  }
 }
