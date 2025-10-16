@@ -1,14 +1,16 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-columns: 2fr 9fr 1fr;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
 }
-
+.img-container {
+  margin: auto;
+}
 img {
-  width: 2rem;
-  height: 2rem;
+  width: 80%;
+  object-fit: cover;
 }
 
 .details {
