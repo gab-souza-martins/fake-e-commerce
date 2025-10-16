@@ -3,7 +3,13 @@ import { RouterLink } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { NgClass } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBars, faX, faCartShopping, faTrash } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBars,
+  faX,
+  faCartShopping,
+  faTrash,
+  faCreditCard,
+} from '@fortawesome/free-solid-svg-icons';
 import { CartStorage } from '../../services/cart-storage';
 import { CartItemComponent } from '../cart-item/cart-item';
 
@@ -18,6 +24,7 @@ export class Header {
   faX = faX;
   faCart = faCartShopping;
   faTrash = faTrash;
+  faCreditCard = faCreditCard;
 
   desktopNavigationActive = false;
   mobileNavigationActive = false;

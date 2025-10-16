@@ -55,10 +55,17 @@
       }
       <!--  -->
       @if (cartItems&&cartItems.length > 0){
-      <button class="btn btn-clear-cart" (click)="clearCart()">
-        <fa-icon [icon]="faTrash" />
-        Clear cart
-      </button>
+      <div class="cart-btns">
+        <a routerLink="checkout" class="btn-checkout">
+          <fa-icon [icon]="faCreditCard" />
+          Checkout</a
+        >
+
+        <button class="btn btn-clear-cart" (click)="clearCart()">
+          <fa-icon [icon]="faTrash" />
+          Clear cart
+        </button>
+      </div>
       }
     </div>
   </nav>
