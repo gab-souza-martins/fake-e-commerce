@@ -38,8 +38,10 @@
       <li><a class="nav-link" routerLink="/category/electronics">Electronics</a></li>
     </ul>
 
-    <button class="btn">
+    <button aria-label="See cart" class="btn" (click)="cartOpen = !cartOpen">
       <fa-icon [icon]="faCart" />
     </button>
+
+    <div class="cart-container" [ngClass]="{ shown: cartOpen }">gafgoanfgajonfgaonfg</div>
   </nav>
 </header>

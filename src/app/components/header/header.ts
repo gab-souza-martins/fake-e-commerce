@@ -18,6 +18,7 @@ export class Header {
 
   desktopNavigationActive = false;
   mobileNavigationActive = false;
+  cartOpen = false;
 
   constructor(private breakpointService: BreakpointObserver) {}
 
