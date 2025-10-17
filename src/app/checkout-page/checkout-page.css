@@ -51,3 +51,24 @@
   font-size: 1.25em;
   font-weight: semibold;
 }
+
+.purchase-btn {
+  margin: 1.5rem 0;
+  padding: 0.5em 1em;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 0.375em;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+.purchase-btn fa-icon {
+  color: inherit;
+}
+.purchase-btn:hover {
+  background-color: var(--primary-color-light);
+}
+.purchase-btn:active {
+  background-color: var(--primary-color-dark);
+}

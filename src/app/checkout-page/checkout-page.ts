@@ -1,15 +1,18 @@
 import { Component, signal } from '@angular/core';
 import { CartStorage } from '../services/cart-storage';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import { CheckoutItem } from '../components/checkout-item/checkout-item';
 
 @Component({
   selector: 'app-checkout-page',
-  imports: [CheckoutItem],
+  imports: [FontAwesomeModule, CheckoutItem],
   templateUrl: './checkout-page.html',
   styleUrl: './checkout-page.css',
 })
 export class CheckoutPage {
   shipping = signal<number>(4.99);
+  faBasket = faBasketShopping;
 
   constructor(private cartStorage: CartStorage) {}
 
