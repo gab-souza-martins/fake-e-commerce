@@ -22,8 +22,10 @@ import { CheckoutItem } from '../components/checkout-item/checkout-item';
 })
 export class CheckoutPage {
   shipping = signal<number>(3.99);
+  payment = signal<string>('');
 
   selectedShipping?: string;
+  selectedPayment?: string;
 
   faBasket = faBasketShopping;
   // *Shipping
@@ -40,6 +42,11 @@ export class CheckoutPage {
   handleShippingSelect(event: Event) {
     this.selectedShipping = (event.target as HTMLInputElement).value;
     this.shipping.set(Number(this.selectedShipping));
+  }
+  handlePaymentSelect(event: Event) {
+    this.selectedPayment = (event.target as HTMLInputElement).value;
+    this.payment.set(this.selectedPayment);
+    console.log(this.selectedPayment);
   }
 
   get cartItems() {

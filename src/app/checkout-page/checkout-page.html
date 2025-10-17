@@ -50,19 +50,51 @@
 
     <div class="payment-options">
       <div class="option">
-        <input type="radio" name="paymentOpt" id="payBoleto" />
+        <input
+          type="radio"
+          name="paymentOpt"
+          id="payBoleto"
+          value="boleto"
+          checked
+          (change)="handlePaymentSelect($event)"
+          [ngClass]="{ selected: payment() === 'boleto' }"
+        />
         <label for="payBoleto"> <fa-icon [icon]="faReceipt" /> Boleto </label>
       </div>
+
       <div class="option">
-        <input type="radio" name="paymentOpt" id="payPix" />
+        <input
+          type="radio"
+          name="paymentOpt"
+          id="payPix"
+          value="Pix"
+          (change)="handlePaymentSelect($event)"
+          [ngClass]="{ selected: payment() === 'Pix' }"
+        />
         <label for="payPix"> <fa-icon [icon]="faQrcode" /> Pix </label>
       </div>
+
       <div class="option">
-        <input type="radio" name="paymentOpt" id="payDebit" />
+        <input
+          type="radio"
+          name="paymentOpt"
+          id="payDebit"
+          value="débito"
+          (change)="handlePaymentSelect($event)"
+          [ngClass]="{ selected: payment() === 'débito' }"
+        />
         <label for="payDebit"> <fa-icon [icon]="faCreditCard" /> Débito </label>
       </div>
+
       <div class="option">
-        <input type="radio" name="paymentOpt" id="payCredit" />
+        <input
+          type="radio"
+          name="paymentOpt"
+          id="payCredit"
+          value="crédito"
+          (change)="handlePaymentSelect($event)"
+          [ngClass]="{ selected: payment() === 'crédito' }"
+        />
         <label for="payCredit"> <fa-icon [icon]="faCreditCard" /> Crédito </label>
       </div>
     </div>
