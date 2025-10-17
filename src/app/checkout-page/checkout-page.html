@@ -10,23 +10,32 @@
 
   <section class="options-container">
     <div class="shipping-options">
-      <input type="radio" name="shippingOpt" id="regularShip" />
-      <label for="regularShip">
-        <fa-icon [icon]="faTruck" />
-        Regular shipping
-      </label>
+      <input
+        type="radio"
+        name="shippingOpt"
+        id="regularShip"
+        value="regularShip"
+        (change)="handleShippingSelect($event)"
+      />
+      <label for="regularShip"> <fa-icon [icon]="faTruck" /> Regular shipping </label>
 
-      <input type="radio" name="shippingOpt" id="fastShip" />
-      <label for="fastShip">
-        <fa-icon [icon]="faTruckFast" />
-        Fast shipping
-      </label>
+      <input
+        type="radio"
+        name="shippingOpt"
+        id="fastShip"
+        value="fastShip"
+        (change)="handleShippingSelect($event)"
+      />
+      <label for="fastShip"> <fa-icon [icon]="faTruckFast" /> Fast shipping </label>
 
-      <input type="radio" name="shippingOpt" id="sameDayShip" />
-      <label for="sameDayShip">
-        <fa-icon [icon]="faSun" />
-        Same day shipping
-      </label>
+      <input
+        type="radio"
+        name="shippingOpt"
+        id="sameDayShip"
+        value="sameDayShip"
+        (change)="handleShippingSelect($event)"
+      />
+      <label for="sameDayShip"> <fa-icon [icon]="faSun" /> Same day shipping </label>
     </div>
   </section>
 

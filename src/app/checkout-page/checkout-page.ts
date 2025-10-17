@@ -13,12 +13,20 @@ import { RouterLink } from '@angular/router';
 })
 export class CheckoutPage {
   shipping = signal<number>(4.99);
+
+  selectedShipping?: string;
+
   faBasket = faBasketShopping;
   faTruck = faTruck;
   faTruckFast = faTruckFast;
   faSun = faSun;
 
   constructor(private cartStorage: CartStorage) {}
+
+  handleShippingSelect(event: Event) {
+    this.selectedShipping = (event.target as HTMLInputElement).value;
+    console.log(this.selectedShipping);
+  }
 
   get cartItems() {
     return this.cartStorage.getCart();
@@ -35,7 +43,6 @@ export class CheckoutPage {
 
     return total;
   }
-
   get total() {
     return this.itemPrice + this.shipping();
   }
