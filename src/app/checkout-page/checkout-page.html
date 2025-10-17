@@ -8,7 +8,7 @@
     @for (item of cartItems; track item.id) {<app-checkout-item [item]="item" />}
   </section>
 
-  <section class="options-container">
+  <section class="payment-container">
     <div class="shipping-options">
       <p style="font-weight: bold">Shipping</p>
 
@@ -102,38 +102,38 @@
         <label for="payCredit"> <fa-icon [icon]="faCreditCard" /> Crédito </label>
       </div>
     </div>
-  </section>
 
-  <section class="final-price">
-    <div class="text-row">
-      <span class="gray-text">Shipping: </span>
-      <span>
-        {{ shipping().toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
-      </span>
+    <div class="final-price">
+      <div class="text-row">
+        <span class="gray-text">Shipping: </span>
+        <span>
+          {{ shipping().toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+        </span>
+      </div>
+
+      <div class="text-row">
+        <span class="gray-text">Items: </span>
+        <span>
+          {{ itemPrice.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+        </span>
+      </div>
+
+      <div class="text-row">
+        <span class="gray-text">Total: </span>
+        <span class="total-price">
+          {{ total.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+        </span>
+      </div>
+
+      @if (!enableBuying()) {
+      <p class="error-message">Escolha uma opção de frete e de pagamento para prosseguir</p>
+      }
+
+      <button class="purchase-btn" routerLink="/purchase-complete" [disabled]="!enableBuying()">
+        <fa-icon [icon]="faBasket" />
+        Finish purchase
+      </button>
     </div>
-
-    <div class="text-row">
-      <span class="gray-text">Items: </span>
-      <span>
-        {{ itemPrice.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
-      </span>
-    </div>
-
-    <div class="text-row">
-      <span class="gray-text">Total: </span>
-      <span class="total-price">
-        {{ total.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
-      </span>
-    </div>
-
-    @if (!enableBuying()) {
-    <p class="error-message">Escolha uma opção de frete e de pagamento para prosseguir</p>
-    }
-
-    <button class="purchase-btn" routerLink="/purchase-complete" [disabled]="!enableBuying()">
-      <fa-icon [icon]="faBasket" />
-      Finish purchase
-    </button>
   </section>
 </div>
 }
