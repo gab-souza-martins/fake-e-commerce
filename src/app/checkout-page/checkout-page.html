@@ -1,3 +1,7 @@
 @if (!cartItems||cartItems.length === 0){
 <p class="empty-message">Your cart is empty</p>
-} @for (item of cartItems; track item.id) {<app-checkout-item [item]="item" />}
+}
+<!--  -->
+<div class="items-container">
+  @for (item of cartItems; track item.id) {<app-checkout-item [item]="item" />}
+</div>
