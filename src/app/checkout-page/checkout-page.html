@@ -83,11 +83,11 @@
           type="radio"
           name="paymentOpt"
           id="payDebit"
-          value="débito"
+          value="debit"
           (change)="handlePaymentSelect($event)"
-          [ngClass]="{ selected: payment() === 'débito' }"
+          [ngClass]="{ selected: payment() === 'debit' }"
         />
-        <label for="payDebit"> <fa-icon [icon]="faCreditCard" /> Débito </label>
+        <label for="payDebit"> <fa-icon [icon]="faCreditCard" /> Debit </label>
       </div>
 
       <div class="option">
@@ -95,45 +95,45 @@
           type="radio"
           name="paymentOpt"
           id="payCredit"
-          value="crédito"
+          value="credit"
           (change)="handlePaymentSelect($event)"
-          [ngClass]="{ selected: payment() === 'crédito' }"
+          [ngClass]="{ selected: payment() === 'credit' }"
         />
-        <label for="payCredit"> <fa-icon [icon]="faCreditCard" /> Crédito </label>
+        <label for="payCredit"> <fa-icon [icon]="faCreditCard" /> Credit </label>
       </div>
     </div>
+  </section>
 
-    <div class="final-price">
-      <div class="text-row">
-        <span class="gray-text">Shipping: </span>
-        <span>
-          {{ shipping().toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
-        </span>
-      </div>
-
-      <div class="text-row">
-        <span class="gray-text">Items: </span>
-        <span>
-          {{ itemPrice.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
-        </span>
-      </div>
-
-      <div class="text-row">
-        <span class="gray-text">Total: </span>
-        <span class="total-price">
-          {{ total.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
-        </span>
-      </div>
-
-      @if (!enableBuying()) {
-      <p class="error-message">Escolha uma opção de frete e de pagamento para prosseguir</p>
-      }
-
-      <button class="purchase-btn" routerLink="/purchase-complete" [disabled]="!enableBuying()">
-        <fa-icon [icon]="faBasket" />
-        Finish purchase
-      </button>
+  <section class="final-price">
+    <div class="text-row">
+      <span class="gray-text">Shipping: </span>
+      <span>
+        {{ shipping().toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+      </span>
     </div>
+
+    <div class="text-row">
+      <span class="gray-text">Items: </span>
+      <span>
+        {{ itemPrice.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+      </span>
+    </div>
+
+    <div class="text-row">
+      <span class="gray-text">Total: </span>
+      <span class="total-price">
+        {{ total.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+      </span>
+    </div>
+
+    @if (!enableBuying()) {
+    <p class="error-message">Escolha uma opção de frete e de pagamento para prosseguir</p>
+    }
+
+    <button class="purchase-btn" routerLink="/purchase-complete" [disabled]="!enableBuying()">
+      <fa-icon [icon]="faBasket" />
+      Finish purchase
+    </button>
   </section>
 </div>
 }

@@ -29,21 +29,22 @@
 
 .payment-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-items: end;
   gap: 2rem;
   margin-top: 2rem;
-  padding-top: 1.5rem;
   width: 100%;
   border-top: 1px solid var(--light-gray);
 }
 
-.payment-container > div {
+.payment-container > div,
+.final-price {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 0.5rem;
-  margin-top: 1.5rem;
+  margin-top: 3rem;
 }
 
 .option {
