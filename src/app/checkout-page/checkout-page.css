@@ -9,6 +9,14 @@
   color: var(--gray-color);
 }
 
+.items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 300px;
+  width: 60%;
+}
+
 .checkout-container {
   display: flex;
   flex-direction: column;

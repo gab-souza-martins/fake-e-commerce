@@ -3,10 +3,10 @@
 }
 <!--  -->
 @if (cartItems&&cartItems.length > 0){
-<section class="checkout-container">
-  <div class="items-container">
+<div class="checkout-container">
+  <section class="items-container">
     @for (item of cartItems; track item.id) {<app-checkout-item [item]="item" />}
-  </div>
+  </section>
 
   <section class="final-price">
     <div class="text-row">
@@ -30,5 +30,5 @@
       </span>
     </div>
   </section>
-</section>
+</div>
 }
