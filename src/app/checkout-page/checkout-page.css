@@ -40,6 +40,7 @@
 .option input,
 .option label {
   cursor: pointer;
+  transition: color 150ms ease-in-out;
 }
 .selected,
 .selected + label {
