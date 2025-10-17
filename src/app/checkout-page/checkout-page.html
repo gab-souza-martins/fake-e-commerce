@@ -18,6 +18,7 @@
           value="3.99"
           checked
           (change)="handleShippingSelect($event)"
+          [ngClass]="{ selected: shipping() === 3.99 }"
         />
         <label for="regularShip"> <fa-icon [icon]="faTruck" /> Regular shipping </label>
       </div>
@@ -29,6 +30,7 @@
           id="fastShip"
           value="5.99"
           (change)="handleShippingSelect($event)"
+          [ngClass]="{ selected: shipping() === 5.99 }"
         />
         <label for="fastShip"> <fa-icon [icon]="faTruckFast" /> Fast shipping </label>
       </div>
@@ -40,6 +42,7 @@
           id="sameDayShip"
           value="9.99"
           (change)="handleShippingSelect($event)"
+          [ngClass]="{ selected: shipping() === 9.99 }"
         />
         <label for="sameDayShip"> <fa-icon [icon]="faSun" /> Same day shipping </label>
       </div>

@@ -37,6 +37,14 @@
   align-items: center;
   gap: 0.5rem;
 }
+.option input,
+.option label {
+  cursor: pointer;
+}
+.selected,
+.selected + label {
+  color: var(--primary-color);
+}
 
 .final-price {
   display: flex;

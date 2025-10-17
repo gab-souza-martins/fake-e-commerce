@@ -1,13 +1,14 @@
 import { Component, signal } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { CartStorage } from '../services/cart-storage';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBasketShopping, faTruck, faTruckFast, faSun } from '@fortawesome/free-solid-svg-icons';
 import { CheckoutItem } from '../components/checkout-item/checkout-item';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-checkout-page',
-  imports: [FontAwesomeModule, CheckoutItem, RouterLink],
+  imports: [FontAwesomeModule, CheckoutItem, RouterLink, NgClass],
   templateUrl: './checkout-page.html',
   styleUrl: './checkout-page.css',
 })
