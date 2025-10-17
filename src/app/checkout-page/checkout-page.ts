@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { CartStorage } from '../services/cart-storage';
-
-// TODO: Apagar e substituir pelo componente de item de checkout
-import { CartItemComponent } from '../components/cart-item/cart-item';
+import { CheckoutItem } from '../components/checkout-item/checkout-item';
 
 @Component({
   selector: 'app-checkout-page',
-  imports: [CartItemComponent],
+  imports: [CheckoutItem],
   templateUrl: './checkout-page.html',
   styleUrl: './checkout-page.css',
 })

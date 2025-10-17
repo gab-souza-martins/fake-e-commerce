@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  grid-template-columns: 4fr 6fr 2fr;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.img-container {
+  margin: auto;
+}
+img {
+  width: 80%;
+  object-fit: cover;
+}
+
+.title {
+  color: var(--dark-gray);
+}
+.price {
+  font-weight: bold;
+}
