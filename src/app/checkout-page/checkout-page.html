@@ -5,3 +5,10 @@
 <div class="items-container">
   @for (item of cartItems; track item.id) {<app-checkout-item [item]="item" />}
 </div>
+
+<div class="total">
+  <span>Total: </span>
+  <span class="total-price">
+    {{ totalPrice.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+  </span>
+</div>
