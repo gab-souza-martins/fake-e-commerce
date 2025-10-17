@@ -58,7 +58,7 @@ export class CheckoutPage {
     this.installments.set(Number((event.target as HTMLInputElement).value));
   }
 
-  get itemPrice() {
+  get itemPrice(): number {
     let total: number = 0;
 
     if (this.cartItems) {
@@ -69,7 +69,24 @@ export class CheckoutPage {
 
     return total;
   }
-  get total() {
-    return this.itemPrice + this.shipping();
+
+  get total(): number {
+    let total: number = this.itemPrice + this.shipping();
+    const interestRate = 1.01 ** this.installments();
+
+    if (this.payment() === 'credit' && this.installments() > 1) {
+      total = total * interestRate;
+    }
+
+    return total;
+  }
+
+  get installmentValue(): number {
+    let total: number = this.total;
+
+    if (this.payment() === 'credit' && this.installments() > 1) {
+      total = total / this.installments();
+    }
+    return total;
   }
 }

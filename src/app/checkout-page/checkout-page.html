@@ -142,6 +142,16 @@
       </span>
     </div>
 
+    @if (payment()==='credit'){
+    <div class="text-row">
+      <span class="gray-text">Billed monthly as: </span>
+      <span class="total-price">
+        {{ installmentValue.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+      </span>
+      <span> x{{ installments() }} </span>
+    </div>
+    }
+    <!--  -->
     @if (!enableBuying()) {
     <p class="error-message">Escolha uma opção de frete e de pagamento para prosseguir</p>
     }
