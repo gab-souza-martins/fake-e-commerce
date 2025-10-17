@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './checkout-page.css',
 })
 export class CheckoutPage {
-  shipping = signal<number>(4.99);
+  shipping = signal<number>(3.99);
 
   selectedShipping?: string;
 
@@ -25,7 +25,7 @@ export class CheckoutPage {
 
   handleShippingSelect(event: Event) {
     this.selectedShipping = (event.target as HTMLInputElement).value;
-    console.log(this.selectedShipping);
+    this.shipping.set(Number(this.selectedShipping));
   }
 
   get cartItems() {

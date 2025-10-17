@@ -14,7 +14,8 @@
         type="radio"
         name="shippingOpt"
         id="regularShip"
-        value="regularShip"
+        value="3.99"
+        checked
         (change)="handleShippingSelect($event)"
       />
       <label for="regularShip"> <fa-icon [icon]="faTruck" /> Regular shipping </label>
@@ -23,7 +24,7 @@
         type="radio"
         name="shippingOpt"
         id="fastShip"
-        value="fastShip"
+        value="5.99"
         (change)="handleShippingSelect($event)"
       />
       <label for="fastShip"> <fa-icon [icon]="faTruckFast" /> Fast shipping </label>
@@ -32,7 +33,7 @@
         type="radio"
         name="shippingOpt"
         id="sameDayShip"
-        value="sameDayShip"
+        value="9.99"
         (change)="handleShippingSelect($event)"
       />
       <label for="sameDayShip"> <fa-icon [icon]="faSun" /> Same day shipping </label>
