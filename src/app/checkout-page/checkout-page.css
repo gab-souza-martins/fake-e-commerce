@@ -18,10 +18,18 @@
   padding: 0 8vw;
 }
 
+.text-row {
+  display: flex;
+  align-items: end;
+  gap: 0.5rem;
+}
+
 .final-price {
-  border-top: 1px solid var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
   width: 100%;
-  text-align: right;
+  border-top: 1px solid var(--light-gray);
 }
 
 .total-price {

@@ -9,11 +9,12 @@
   </div>
 
   <section class="final-price">
-    <span class="gray-text">Total: </span>
-
-    <span class="total-price">
-      {{ totalPrice.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
-    </span>
+    <div class="text-row">
+      <span class="gray-text">Total: </span>
+      <span class="total-price">
+        {{ totalPrice.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+      </span>
+    </div>
   </section>
 </section>
 }
