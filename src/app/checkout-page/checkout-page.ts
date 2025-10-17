@@ -70,12 +70,18 @@ export class CheckoutPage {
     return total;
   }
 
+  get interestRate(): number {
+    const installments: number = this.installments() > 1 ? this.installments() : 0;
+    const rate: number = 1.01 ** installments;
+
+    return this.itemPrice * rate - this.itemPrice;
+  }
+
   get total(): number {
     let total: number = this.itemPrice + this.shipping();
-    const interestRate = 1.01 ** this.installments();
 
     if (this.payment() === 'credit' && this.installments() > 1) {
-      total = total * interestRate;
+      total = total + this.interestRate;
     }
 
     return total;
@@ -87,6 +93,7 @@ export class CheckoutPage {
     if (this.payment() === 'credit' && this.installments() > 1) {
       total = total / this.installments();
     }
+
     return total;
   }
 }

@@ -135,6 +135,15 @@
       </span>
     </div>
 
+    @if (payment()==='credit'){
+    <div class="text-row">
+      <span class="gray-text">Interest: </span>
+      <span>
+        {{ interestRate.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+      </span>
+    </div>
+    }
+
     <div class="text-row">
       <span class="gray-text">Total: </span>
       <span class="total-price">
