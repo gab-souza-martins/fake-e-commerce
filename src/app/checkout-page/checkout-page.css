@@ -91,3 +91,7 @@
 .purchase-btn:active {
   background-color: var(--primary-color-dark);
 }
+.purchase-btn:disabled {
+  background-color: var(--gray-color);
+  cursor: auto;
+}

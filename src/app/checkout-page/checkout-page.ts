@@ -22,7 +22,7 @@ import { CheckoutItem } from '../components/checkout-item/checkout-item';
 })
 export class CheckoutPage {
   shipping = signal<number>(3.99);
-  payment = signal<string>('boleto');
+  payment = signal<string>('');
   enableBuying = computed(() => {
     if (!this.shipping || this.shipping() <= 0 || !this.payment || this.payment() === '') {
       return false;
@@ -56,7 +56,6 @@ export class CheckoutPage {
   handlePaymentSelect(event: Event) {
     this.selectedPayment = (event.target as HTMLInputElement).value;
     this.payment.set(this.selectedPayment);
-    console.log(this.selectedPayment);
   }
 
   get itemPrice() {
