@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CartStorage } from '../services/cart-storage';
 import { CheckoutItem } from '../components/checkout-item/checkout-item';
 
@@ -9,13 +9,15 @@ import { CheckoutItem } from '../components/checkout-item/checkout-item';
   styleUrl: './checkout-page.css',
 })
 export class CheckoutPage {
+  shipping = signal<number>(4.99);
+
   constructor(private cartStorage: CartStorage) {}
 
   get cartItems() {
     return this.cartStorage.getCart();
   }
 
-  get totalPrice() {
+  get itemPrice() {
     let total: number = 0;
 
     if (this.cartItems) {
@@ -25,5 +27,9 @@ export class CheckoutPage {
     }
 
     return total;
+  }
+
+  get total() {
+    return this.itemPrice + this.shipping();
   }
 }

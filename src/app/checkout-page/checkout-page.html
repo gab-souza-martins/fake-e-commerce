@@ -10,9 +10,23 @@
 
   <section class="final-price">
     <div class="text-row">
+      <span class="gray-text">Shipping: </span>
+      <span>
+        {{ shipping().toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+      </span>
+    </div>
+
+    <div class="text-row">
+      <span class="gray-text">Items: </span>
+      <span>
+        {{ itemPrice.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+      </span>
+    </div>
+
+    <div class="text-row">
       <span class="gray-text">Total: </span>
       <span class="total-price">
-        {{ totalPrice.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+        {{ total.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
       </span>
     </div>
   </section>
