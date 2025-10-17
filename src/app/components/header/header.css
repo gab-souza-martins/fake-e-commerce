@@ -1,11 +1,12 @@
 header {
-  position: sticky;
+  position: fixed;
   top: -0.01rem;
   left: 0;
   z-index: 1000;
   background-color: white;
   padding: 0.6rem 1.2rem;
   width: 100vw;
+  min-height: 8vh;
   border-bottom: 1px solid var(--light-gray);
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
