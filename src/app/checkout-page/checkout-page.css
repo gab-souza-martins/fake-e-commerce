@@ -28,8 +28,21 @@
 }
 
 .options-container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
   width: 100%;
   border-top: 1px solid var(--light-gray);
+}
+
+.options-container > div {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .option {

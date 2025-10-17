@@ -22,7 +22,7 @@ import { CheckoutItem } from '../components/checkout-item/checkout-item';
 })
 export class CheckoutPage {
   shipping = signal<number>(3.99);
-  payment = signal<string>('');
+  payment = signal<string>('boleto');
   enableBuying = computed(() => {
     if (!this.shipping || this.shipping() <= 0 || !this.payment || this.payment() === '') {
       return false;
