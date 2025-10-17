@@ -1,17 +1,30 @@
 .empty-message {
   display: flex;
   align-items: center;
-  justify-content: center;
   width: 100%;
   min-height: 80vh;
+}
+
+.gray-text {
   color: var(--gray-color);
 }
 
-.items-container {
+.checkout-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   padding: 0 8vw;
+}
+
+.final-price {
+  border-top: 1px solid var(--light-gray);
+  width: 100%;
+  text-align: right;
+}
+
+.total-price {
+  font-size: 1.25rem;
+  font-weight: semibold;
 }

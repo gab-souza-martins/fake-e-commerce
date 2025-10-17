@@ -1,14 +1,19 @@
 @if (!cartItems||cartItems.length === 0){
-<p class="empty-message">Your cart is empty</p>
+<p class="empty-message gray-text">Your cart is empty</p>
 }
 <!--  -->
-<div class="items-container">
-  @for (item of cartItems; track item.id) {<app-checkout-item [item]="item" />}
-</div>
+@if (cartItems&&cartItems.length > 0){
+<section class="checkout-container">
+  <div class="items-container">
+    @for (item of cartItems; track item.id) {<app-checkout-item [item]="item" />}
+  </div>
 
-<div class="total">
-  <span>Total: </span>
-  <span class="total-price">
-    {{ totalPrice.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
-  </span>
-</div>
+  <section class="final-price">
+    <span class="gray-text">Total: </span>
+
+    <span class="total-price">
+      {{ totalPrice.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+    </span>
+  </section>
+</section>
+}
