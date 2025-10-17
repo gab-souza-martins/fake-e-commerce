@@ -3,10 +3,11 @@ import { CartStorage } from '../services/cart-storage';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import { CheckoutItem } from '../components/checkout-item/checkout-item';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-checkout-page',
-  imports: [FontAwesomeModule, CheckoutItem],
+  imports: [FontAwesomeModule, CheckoutItem, RouterLink],
   templateUrl: './checkout-page.html',
   styleUrl: './checkout-page.css',
 })
