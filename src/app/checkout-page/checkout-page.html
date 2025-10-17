@@ -47,6 +47,25 @@
         <label for="sameDayShip"> <fa-icon [icon]="faSun" /> Same day shipping </label>
       </div>
     </div>
+
+    <div class="payment-options">
+      <div class="option">
+        <input type="radio" name="paymentOpt" id="payBoleto" />
+        <label for="payBoleto"> <fa-icon [icon]="faReceipt" /> Boleto </label>
+      </div>
+      <div class="option">
+        <input type="radio" name="paymentOpt" id="payPix" />
+        <label for="payPix"> <fa-icon [icon]="faQrcode" /> Pix </label>
+      </div>
+      <div class="option">
+        <input type="radio" name="paymentOpt" id="payDebit" />
+        <label for="payDebit"> <fa-icon [icon]="faCreditCard" /> Débito </label>
+      </div>
+      <div class="option">
+        <input type="radio" name="paymentOpt" id="payCredit" />
+        <label for="payCredit"> <fa-icon [icon]="faCreditCard" /> Crédito </label>
+      </div>
+    </div>
   </section>
 
   <section class="final-price">

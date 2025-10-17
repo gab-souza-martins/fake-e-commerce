@@ -3,7 +3,15 @@ import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CartStorage } from '../services/cart-storage';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBasketShopping, faTruck, faTruckFast, faSun } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBasketShopping,
+  faTruck,
+  faTruckFast,
+  faSun,
+  faReceipt,
+  faQrcode,
+  faCreditCard,
+} from '@fortawesome/free-solid-svg-icons';
 import { CheckoutItem } from '../components/checkout-item/checkout-item';
 
 @Component({
@@ -18,9 +26,14 @@ export class CheckoutPage {
   selectedShipping?: string;
 
   faBasket = faBasketShopping;
+  // *Shipping
   faTruck = faTruck;
   faTruckFast = faTruckFast;
   faSun = faSun;
+  // *Payment
+  faReceipt = faReceipt;
+  faQrcode = faQrcode;
+  faCreditCard = faCreditCard;
 
   constructor(private cartStorage: CartStorage) {}
 
