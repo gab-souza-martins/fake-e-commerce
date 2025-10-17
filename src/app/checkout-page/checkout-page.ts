@@ -23,15 +23,14 @@ import { CheckoutItem } from '../components/checkout-item/checkout-item';
 export class CheckoutPage {
   shipping = signal<number>(3.99);
   payment = signal<string>('boleto');
+  installments = signal<number>(1);
+
   enableBuying = computed(() => {
     if (!this.shipping || this.shipping() <= 0 || !this.payment || this.payment() === '') {
       return false;
     }
     return true;
   });
-
-  selectedShipping?: string;
-  selectedPayment?: string;
 
   faBasket = faBasketShopping;
   // *Shipping
@@ -50,12 +49,13 @@ export class CheckoutPage {
   }
 
   handleShippingSelect(event: Event) {
-    this.selectedShipping = (event.target as HTMLInputElement).value;
-    this.shipping.set(Number(this.selectedShipping));
+    this.shipping.set(Number((event.target as HTMLInputElement).value));
   }
   handlePaymentSelect(event: Event) {
-    this.selectedPayment = (event.target as HTMLInputElement).value;
-    this.payment.set(this.selectedPayment);
+    this.payment.set((event.target as HTMLInputElement).value);
+  }
+  handleChangeInstallments(event: Event) {
+    this.installments.set(Number((event.target as HTMLInputElement).value));
   }
 
   get itemPrice() {

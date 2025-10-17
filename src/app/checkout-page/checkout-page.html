@@ -101,6 +101,22 @@
         />
         <label for="payCredit"> <fa-icon [icon]="faCreditCard" /> Credit </label>
       </div>
+
+      @if (payment()==='credit') {
+      <label for="installments">
+        Pay over
+        <input
+          type="number"
+          min="1"
+          max="12"
+          name="installments"
+          id="installments"
+          [value]="installments()"
+          (change)="handleChangeInstallments($event)"
+        />
+        months
+      </label>
+      }
     </div>
   </section>
 
