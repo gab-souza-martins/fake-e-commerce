@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CartStorage } from '../services/cart-storage';
@@ -22,7 +22,13 @@ import { CheckoutItem } from '../components/checkout-item/checkout-item';
 })
 export class CheckoutPage {
   shipping = signal<number>(3.99);
-  payment = signal<string>('');
+  payment = signal<string>('boleto');
+  enableBuying = computed(() => {
+    if (!this.shipping || this.shipping() <= 0 || !this.payment || this.payment() === '') {
+      return false;
+    }
+    return true;
+  });
 
   selectedShipping?: string;
   selectedPayment?: string;
@@ -39,6 +45,10 @@ export class CheckoutPage {
 
   constructor(private cartStorage: CartStorage) {}
 
+  get cartItems() {
+    return this.cartStorage.getCart();
+  }
+
   handleShippingSelect(event: Event) {
     this.selectedShipping = (event.target as HTMLInputElement).value;
     this.shipping.set(Number(this.selectedShipping));
@@ -47,10 +57,6 @@ export class CheckoutPage {
     this.selectedPayment = (event.target as HTMLInputElement).value;
     this.payment.set(this.selectedPayment);
     console.log(this.selectedPayment);
-  }
-
-  get cartItems() {
-    return this.cartStorage.getCart();
   }
 
   get itemPrice() {

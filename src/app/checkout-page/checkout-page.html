@@ -122,7 +122,7 @@
       </span>
     </div>
 
-    <button class="purchase-btn" routerLink="/purchase-complete">
+    <button class="purchase-btn" routerLink="/purchase-complete" [disabled]="!enableBuying()">
       <fa-icon [icon]="faBasket" />
       Finish purchase
     </button>
