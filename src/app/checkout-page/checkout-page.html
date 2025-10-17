@@ -22,7 +22,7 @@
           (change)="handleShippingSelect($event)"
           [ngClass]="{ selected: shipping() === 3.99 }"
         />
-        <label for="regularShip"> <fa-icon [icon]="faTruck" /> Regular shipping </label>
+        <label for="regularShip"> <fa-icon [icon]="faTruck" /> Regular </label>
       </div>
 
       <div class="option">
@@ -34,7 +34,7 @@
           (change)="handleShippingSelect($event)"
           [ngClass]="{ selected: shipping() === 5.99 }"
         />
-        <label for="fastShip"> <fa-icon [icon]="faTruckFast" /> Fast shipping </label>
+        <label for="fastShip"> <fa-icon [icon]="faTruckFast" /> Fast </label>
       </div>
 
       <div class="option">
@@ -46,7 +46,7 @@
           (change)="handleShippingSelect($event)"
           [ngClass]="{ selected: shipping() === 9.99 }"
         />
-        <label for="sameDayShip"> <fa-icon [icon]="faSun" /> Same day shipping </label>
+        <label for="sameDayShip"> <fa-icon [icon]="faSun" /> Same day </label>
       </div>
     </div>
 
@@ -106,6 +106,7 @@
       <label for="installments">
         Pay over
         <input
+          aria-label="Number of installments"
           type="number"
           min="1"
           max="12"
