@@ -122,6 +122,10 @@
       </span>
     </div>
 
+    @if (!enableBuying()) {
+    <p class="error-message">Escolha uma opção de frete e de pagamento para prosseguir</p>
+    }
+
     <button class="purchase-btn" routerLink="/purchase-complete" [disabled]="!enableBuying()">
       <fa-icon [icon]="faBasket" />
       Finish purchase

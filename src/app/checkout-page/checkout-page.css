@@ -91,6 +91,13 @@
 .purchase-btn:active {
   background-color: var(--primary-color-dark);
 }
+
+.error-message {
+  margin-top: 2rem;
+  color: var(--rose-color);
+  font-size: 0.9rem;
+  text-align: right;
+}
 .purchase-btn:disabled {
   background-color: var(--gray-color);
   cursor: auto;
