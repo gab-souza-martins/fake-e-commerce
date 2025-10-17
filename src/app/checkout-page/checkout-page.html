@@ -8,6 +8,19 @@
     @for (item of cartItems; track item.id) {<app-checkout-item [item]="item" />}
   </section>
 
+  <section class="options-container">
+    <div class="shipping-options">
+      <input type="radio" name="shippingOpt" id="regularShip" />
+      <label for="regularShip">Regular shipping</label>
+
+      <input type="radio" name="shippingOpt" id="fastShip" />
+      <label for="fastShip">Fast shipping </label>
+
+      <input type="radio" name="shippingOpt" id="sameDayShip" />
+      <label for="sameDayShip">Same day shipping </label>
+    </div>
+  </section>
+
   <section class="final-price">
     <div class="text-row">
       <span class="gray-text">Shipping: </span>
