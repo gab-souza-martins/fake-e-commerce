@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { CartStorage } from '../services/cart-storage';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
+import { faBasketShopping, faTruck, faTruckFast, faSun } from '@fortawesome/free-solid-svg-icons';
 import { CheckoutItem } from '../components/checkout-item/checkout-item';
 import { RouterLink } from '@angular/router';
 
@@ -14,6 +14,9 @@ import { RouterLink } from '@angular/router';
 export class CheckoutPage {
   shipping = signal<number>(4.99);
   faBasket = faBasketShopping;
+  faTruck = faTruck;
+  faTruckFast = faTruckFast;
+  faSun = faSun;
 
   constructor(private cartStorage: CartStorage) {}
 

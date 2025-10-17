@@ -11,13 +11,22 @@
   <section class="options-container">
     <div class="shipping-options">
       <input type="radio" name="shippingOpt" id="regularShip" />
-      <label for="regularShip">Regular shipping</label>
+      <label for="regularShip">
+        <fa-icon [icon]="faTruck" />
+        Regular shipping
+      </label>
 
       <input type="radio" name="shippingOpt" id="fastShip" />
-      <label for="fastShip">Fast shipping </label>
+      <label for="fastShip">
+        <fa-icon [icon]="faTruckFast" />
+        Fast shipping
+      </label>
 
       <input type="radio" name="shippingOpt" id="sameDayShip" />
-      <label for="sameDayShip">Same day shipping </label>
+      <label for="sameDayShip">
+        <fa-icon [icon]="faSun" />
+        Same day shipping
+      </label>
     </div>
   </section>
 
