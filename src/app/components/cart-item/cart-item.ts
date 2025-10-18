@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 import { CartItem } from '../../types/cart-item.type';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faX } from '@fortawesome/free-solid-svg-icons';
+import { faMinus } from '@fortawesome/free-solid-svg-icons';
 import { CartStorage } from '../../services/cart-storage';
 
 @Component({
@@ -12,18 +12,31 @@ import { CartStorage } from '../../services/cart-storage';
 })
 export class CartItemComponent {
   item = input.required<CartItem>();
-  faX = faX;
+  faMinus = faMinus;
 
   constructor(private cartStorage: CartStorage) {}
 
-  removeItem(): void {
+  reduceItem(): void {
     const currentCart: CartItem[] | null = this.cartStorage.getCart();
     let newCart: CartItem[] = [];
 
     if (currentCart) {
       newCart = currentCart;
     }
-    newCart = newCart.filter((i) => i.id !== this.item().id);
+
+    const itemIndex = newCart.findIndex(
+      (cartItem) => cartItem.itemInfo.id === this.item().itemInfo.id
+    );
+
+    if (itemIndex !== -1) {
+      if (newCart[itemIndex].quantity > 1) {
+        newCart[itemIndex].quantity--;
+        newCart[itemIndex].totalPrice =
+          newCart[itemIndex].itemInfo.price * newCart[itemIndex].quantity;
+      } else {
+        newCart.splice(itemIndex, 1);
+      }
+    }
 
     this.cartStorage.setCart(newCart);
   }
