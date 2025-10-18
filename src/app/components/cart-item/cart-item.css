@@ -23,7 +23,12 @@ img {
 .title {
   color: var(--dark-gray);
 }
-.price {
+
+.price-calculation {
+  color: var(--gray-color);
+  font-weight: normal;
+}
+.price-total {
   font-weight: bold;
 }
 
