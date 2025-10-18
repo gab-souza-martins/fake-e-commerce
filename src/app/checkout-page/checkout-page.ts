@@ -63,7 +63,7 @@ export class CheckoutPage {
 
     if (this.cartItems) {
       for (let i = 0; i < this.cartItems.length; i++) {
-        total += this.cartItems[i].itemInfo.price;
+        total += this.cartItems[i].totalPrice;
       }
     }
 
