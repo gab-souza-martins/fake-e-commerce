@@ -12,6 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { CartStorage } from '../../services/cart-storage';
 import { CartItemComponent } from '../cart-item/cart-item';
+import { CartItem } from '../../types/cart-item.type';
 
 @Component({
   selector: 'app-header',
@@ -48,7 +49,19 @@ export class Header {
     this.cartStorage.clearCart();
   }
 
-  get cartItems() {
+  get cartItems(): CartItem[] | null {
     return this.cartStorage.getCart();
+  }
+
+  get itemQuantity(): number {
+    let quantity: number = 0;
+
+    if (this.cartItems) {
+      for (let i = 0; i < this.cartItems.length; i++) {
+        quantity += this.cartItems[i].quantity;
+      }
+    }
+
+    return quantity;
   }
 }
