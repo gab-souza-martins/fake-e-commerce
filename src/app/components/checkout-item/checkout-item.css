@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: 4fr 6fr 2fr;
+  grid-template-columns: 3fr 6fr 3fr;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
@@ -16,6 +16,16 @@ img {
 .title {
   color: var(--dark-gray);
 }
+
 .price {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em;
+}
+.price-calculation {
+  color: var(--gray-color);
+  font-weight: normal;
+}
+.price-total {
   font-weight: bold;
 }

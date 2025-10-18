@@ -6,6 +6,14 @@
   <p class="title">{{ item().itemInfo.title }}</p>
 
   <p class="price">
-    {{ item().itemInfo.price.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+    <span class="price-calculation">
+      {{ item().itemInfo.price.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+    </span>
+
+    <span class="price-calculation">x {{ item().quantity }}</span>
+
+    <span class="price-total">
+      {{ item().totalPrice.toLocaleString('en', { style: 'currency', currency: 'USD' }) }}
+    </span>
   </p>
 </div>
