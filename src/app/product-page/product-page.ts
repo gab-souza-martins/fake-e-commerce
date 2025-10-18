@@ -92,7 +92,22 @@ export class ProductPage {
     if (currentCart) {
       newCart = currentCart;
     }
-    newCart.push({ id: crypto.randomUUID(), itemInfo: this.product() });
+
+    const existingItem: CartItem | undefined = newCart.find(
+      (i) => i.itemInfo.id === this.product().id
+    );
+
+    if (existingItem) {
+      existingItem.quantity++;
+      existingItem.totalPrice = existingItem.itemInfo.price * existingItem.quantity;
+    } else {
+      newCart.push({
+        id: crypto.randomUUID(),
+        itemInfo: this.product(),
+        quantity: 1,
+        totalPrice: this.product().price,
+      });
+    }
 
     this.cartStorage.setCart(newCart);
   }
