@@ -96,4 +96,8 @@ export class CheckoutPage {
 
     return total;
   }
+
+  finishPurchase() {
+    this.cartStorage.clearCart();
+  }
 }
