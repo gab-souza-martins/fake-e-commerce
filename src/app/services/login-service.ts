@@ -1,23 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { User } from '../types/user.type';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
-  saveUser(user: User): void {
-    try {
-      localStorage.setItem('loggedUser', JSON.stringify(user));
-    } catch (e) {
-      console.error('Error saving user token to local storage', e);
-    }
-  }
+  private _isLoggedIn = signal<boolean>(false);
+  readonly isLoggedIn = this._isLoggedIn;
+
+  private _user = signal<User | null>(null);
+  readonly user = this._user;
 
   getUser(): User | null {
     try {
-      const data = localStorage.getItem('loggedUser');
-      if (data) {
-        return JSON.parse(data) as User;
+      if (this._user) {
+        return this._user();
       }
       return null;
     } catch (e) {
@@ -27,12 +24,14 @@ export class LoginService {
   }
 
   getIsLoggedIn(): boolean {
-    return this.getUser() !== null;
+    return this._isLoggedIn();
   }
 
   logIn(user: User): boolean {
     if (user) {
-      this.saveUser(user);
+      localStorage.setItem('loggedUser', JSON.stringify(user));
+      this._user.set(user);
+      this._isLoggedIn.set(true);
       return true;
     }
     return false;
@@ -41,6 +40,8 @@ export class LoginService {
   logOut(): void {
     try {
       localStorage.removeItem('loggedUser');
+      this._user.set(null);
+      this._isLoggedIn.set(false);
     } catch (e) {
       console.error('Error removing user token from local storage', e);
     }

@@ -79,10 +79,14 @@ export class Header {
   }
 
   get isLoggedIn(): boolean {
-    return this.loginService.getIsLoggedIn();
+    return this.loginService.isLoggedIn();
   }
 
   get loggedUser(): User | null {
-    return this.loginService.getUser();
+    return this.loginService.user();
+  }
+
+  logOut(): void {
+    this.loginService.logOut();
   }
 }

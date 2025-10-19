@@ -44,6 +44,7 @@
 .rose-btn {
   background: none;
   border: none;
+  font-size: 1rem;
   color: var(--rose-color);
   cursor: pointer;
   transition: all 150ms ease-in-out;
