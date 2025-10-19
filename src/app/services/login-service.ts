@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { User } from '../types/user.type';
 
 @Injectable({
   providedIn: 'root',
@@ -21,12 +22,19 @@ export class LoginService {
     }
   }
 
-  signIn(username: string, email: string, password: string): boolean {
-    if (username && email && password) {
-      const mockToken = crypto.randomUUID();
-      this.saveUserToken(mockToken);
+  logIn(user: User): boolean {
+    if (user) {
+      this.saveUserToken(user.token);
       return true;
     }
     return false;
+  }
+
+  logOut(): void {
+    try {
+      localStorage.removeItem('userToken');
+    } catch (e) {
+      console.error('Error removing user token from local storage', e);
+    }
   }
 }
