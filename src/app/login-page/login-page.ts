@@ -9,6 +9,8 @@ import {
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { NgClass } from '@angular/common';
+import { LoginService } from '../services/login-service';
+import { RouterLink } from '@angular/router';
 
 const passwordMatchValidator: ValidatorFn = (group: AbstractControl) => {
   const password = group.get('password');
@@ -31,7 +33,7 @@ const passwordMatchValidator: ValidatorFn = (group: AbstractControl) => {
 
 @Component({
   selector: 'app-login-page',
-  imports: [FontAwesomeModule, ReactiveFormsModule, NgClass],
+  imports: [FontAwesomeModule, ReactiveFormsModule, NgClass, RouterLink],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css',
 })
@@ -49,6 +51,8 @@ export class LoginPage {
     },
     { validators: passwordMatchValidator }
   );
+
+  constructor(private loginService: LoginService) {}
 
   get invalidUsername() {
     return (
@@ -83,5 +87,21 @@ export class LoginPage {
       this.loginForm.get('postalCode')?.invalid &&
       (this.loginForm.get('postalCode')?.touched || this.loginForm.get('postalCode')?.dirty)
     );
+  }
+
+  onSubmit() {
+    if (this.loginForm.valid) {
+      console.log('Form Submitted', this.loginForm.value);
+      this.loginService.logIn({
+        token: crypto.randomUUID(),
+        username: this.loginForm.value.username || '',
+        email: this.loginForm.value.email || '',
+        password: this.loginForm.value.password || '',
+        postalCode: this.loginForm.value.postalCode || '',
+      });
+    } else {
+      console.log('Form is invalid');
+      this.loginForm.markAllAsTouched();
+    }
   }
 }

@@ -67,7 +67,13 @@
   <div class="error-message">All inputs are required</div>
   }
 
-  <button type="submit" class="primary-btn" [disabled]="loginForm.invalid">
+  <button
+    type="submit"
+    class="primary-btn"
+    (click)="onSubmit()"
+    routerLink=""
+    [disabled]="loginForm.invalid"
+  >
     <fa-icon [icon]="faLogin" />
     Login
   </button>

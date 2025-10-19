@@ -5,15 +5,15 @@ import { User } from '../types/user.type';
   providedIn: 'root',
 })
 export class LoginService {
-  saveUserToken(token: string): void {
+  saveUser(user: User): void {
     try {
-      localStorage.setItem('userToken', token);
+      localStorage.setItem('userToken', JSON.stringify(user));
     } catch (e) {
       console.error('Error saving user token to local storage', e);
     }
   }
 
-  getUserToken(): string | null {
+  getUser(): string | null {
     try {
       return localStorage.getItem('userToken');
     } catch (e) {
@@ -23,12 +23,12 @@ export class LoginService {
   }
 
   getIsLoggedIn(): boolean {
-    return this.getUserToken() !== null;
+    return this.getUser() !== null;
   }
 
   logIn(user: User): boolean {
     if (user) {
-      this.saveUserToken(user.token);
+      this.saveUser(user);
       return true;
     }
     return false;
