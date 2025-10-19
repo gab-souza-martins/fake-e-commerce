@@ -2,9 +2,6 @@
   <h2>Login</h2>
 
   <div class="form-group">
-    @if (invalidUsername) {
-    <div class="error-message">Username is required.</div>
-    }
     <label for="username" [ngClass]="{ errorLabel: invalidUsername }">Username</label>
     <input
       type="text"
@@ -63,6 +60,10 @@
       required
     />
   </div>
+
+  @if (loginForm.invalid) {
+  <div class="error-message">All inputs are required to be filled</div>
+  }
 
   <button type="submit" class="primary-btn" [disabled]="loginForm.invalid">
     <fa-icon [icon]="faLogin" />
