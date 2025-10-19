@@ -4,6 +4,7 @@ import { ProductPage } from './product-page/product-page';
 import { CategoryPage } from './category-page/category-page';
 import { CheckoutPage } from './checkout-page/checkout-page';
 import { PurchaseCompletePage } from './purchase-complete-page/purchase-complete-page';
+import { LoginPage } from './login-page/login-page';
 
 export const routes: Routes = [
   {
@@ -17,6 +18,10 @@ export const routes: Routes = [
   {
     path: 'product/:productId',
     component: ProductPage,
+  },
+  {
+    path: 'login',
+    component: LoginPage,
   },
   {
     path: 'checkout',

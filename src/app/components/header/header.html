@@ -66,10 +66,10 @@
       <!--  -->
       @if (cartItems&&cartItems.length > 0){
       <div class="cart-btns">
-        <a routerLink="checkout" class="primary-btn sm-primary-btn">
+        <button (click)="cartOpen = false" routerLink="checkout" class="primary-btn sm-primary-btn">
           <fa-icon [icon]="faCreditCard" />
           Checkout
-        </a>
+        </button>
 
         <button class="rose-btn btn-clear-cart" (click)="clearCart()">
           <fa-icon [icon]="faTrash" />
@@ -83,7 +83,7 @@
       @if (!isLoggedIn) {
       <p class="empty-message" style="text-align: start">You are not logged in</p>
       <br />
-      <button class="primary-btn sm-primary-btn">
+      <button class="primary-btn sm-primary-btn" (click)="userOpen = false" routerLink="/login">
         <fa-icon [icon]="faLogin" />
         Login
       </button>
