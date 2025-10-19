@@ -87,25 +87,8 @@ input#installments {
   font-weight: semibold;
 }
 
-.purchase-btn {
+.primary-btn {
   margin: 1.5rem 0;
-  padding: 0.5em 1em;
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: 0.375em;
-  font-size: 1.2rem;
-  color: white;
-  cursor: pointer;
-  transition: all 250ms ease-in-out;
-}
-.purchase-btn fa-icon {
-  color: inherit;
-}
-.purchase-btn:hover {
-  background-color: var(--primary-color-light);
-}
-.purchase-btn:active {
-  background-color: var(--primary-color-dark);
 }
 
 .error-message {
@@ -113,8 +96,4 @@ input#installments {
   color: var(--rose-color);
   font-size: 0.9rem;
   text-align: right;
-}
-.purchase-btn:disabled {
-  background-color: var(--gray-color);
-  cursor: auto;
 }

@@ -111,17 +111,8 @@ nav.desktopLayout {
 }
 
 .btn-checkout {
-  background-color: var(--primary-color);
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.325em;
   color: white;
   font-size: 0.9rem;
-}
-.btn-checkout:hover {
-  background-color: var(--primary-color-light);
-}
-.btn-checkout:active {
-  background-color: var(--primary-color-dark);
 }
 
 a {

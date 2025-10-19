@@ -36,3 +36,7 @@
 .primary-btn:active {
   background-color: var(--primary-color-dark);
 }
+.primary-btn:disabled {
+  background-color: var(--gray-color);
+  cursor: auto;
+}

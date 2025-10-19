@@ -54,10 +54,10 @@
       <!--  -->
       @if (cartItems&&cartItems.length > 0){
       <div class="cart-btns">
-        <a routerLink="checkout" class="btn-checkout">
+        <a routerLink="checkout" class="primary-btn btn-checkout">
           <fa-icon [icon]="faCreditCard" />
-          Checkout</a
-        >
+          Checkout
+        </a>
 
         <button class="btn btn-clear-cart" (click)="clearCart()">
           <fa-icon [icon]="faTrash" />
