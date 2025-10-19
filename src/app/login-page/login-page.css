@@ -3,12 +3,16 @@
   flex-direction: column;
   align-items: start;
   gap: 1rem;
-  width: 100%;
-  padding: 0 8vw;
+  margin: auto;
+  width: clamp(300px, 50%, 400px);
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.primary-btn {
+  font-size: 1rem;
 }
