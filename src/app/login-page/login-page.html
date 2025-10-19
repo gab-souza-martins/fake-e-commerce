@@ -38,9 +38,9 @@
   </div>
 
   <div class="form-group">
-    <label for="passwordConfirm" [ngClass]="{ errorLabel: invalidPasswordConfirm }"
-      >Confirm password</label
-    >
+    <label for="passwordConfirm" [ngClass]="{ errorLabel: invalidPasswordConfirm }">
+      Confirm password
+    </label>
     <input
       type="password"
       formControlName="passwordConfirm"
@@ -64,7 +64,7 @@
   </div>
 
   @if (loginForm.invalid) {
-  <div class="error-message">All inputs are required to be filled</div>
+  <div class="error-message">All inputs are required</div>
   }
 
   <button type="submit" class="primary-btn" [disabled]="loginForm.invalid">

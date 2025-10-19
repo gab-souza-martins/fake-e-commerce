@@ -44,8 +44,7 @@ export class LoginPage {
     return (
       this.loginForm.get('passwordConfirm')?.invalid &&
       (this.loginForm.get('passwordConfirm')?.touched ||
-        this.loginForm.get('passwordConfirm')?.dirty) &&
-      this.loginForm.get('passwordConfirm')?.value !== this.loginForm.get('password')?.value
+        this.loginForm.get('passwordConfirm')?.dirty)
     );
   }
   get invalidPostalCode() {
