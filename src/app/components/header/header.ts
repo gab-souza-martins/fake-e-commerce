@@ -17,6 +17,7 @@ import { CartStorage } from '../../services/cart-storage';
 import { CartItemComponent } from '../cart-item/cart-item';
 import { CartItem } from '../../types/cart-item.type';
 import { LoginService } from '../../services/login-service';
+import { User } from '../../types/user.type';
 
 @Component({
   selector: 'app-header',
@@ -79,5 +80,9 @@ export class Header {
 
   get isLoggedIn(): boolean {
     return this.loginService.getIsLoggedIn();
+  }
+
+  get loggedUser(): User | null {
+    return this.loginService.getUser();
   }
 }
