@@ -57,7 +57,7 @@
       </button>
     </div>
 
-    <div class="off-grid cart-container" [ngClass]="{ shown: cartOpen }">
+    <div class="off-grid off-grid-right" [ngClass]="{ shown: cartOpen }">
       @for (item of cartItems; track item.id) {<app-cart-item [item]="item" />}
       <!--  -->
       @if (!cartItems||cartItems.length === 0){
@@ -79,7 +79,7 @@
       }
     </div>
 
-    <div class="off-grid user-container" [ngClass]="{ shown: userOpen }">
+    <div class="off-grid off-grid-right" [ngClass]="{ shown: userOpen }">
       <p class="empty-message">User profile coming soon!</p>
     </div>
   </nav>

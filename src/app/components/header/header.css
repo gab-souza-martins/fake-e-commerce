@@ -47,7 +47,7 @@ nav.desktopLayout {
   justify-content: flex-end;
 }
 
-.cart-container {
+.off-grid-right {
   top: 3rem;
   right: 1rem;
   width: clamp(220px, 400px, 85vw);
@@ -58,7 +58,7 @@ nav.desktopLayout {
   transform: scale(0);
   transition: 200ms ease-in-out;
 }
-.cart-container.shown {
+.off-grid-right.shown {
   transform: scale(1);
 }
 
