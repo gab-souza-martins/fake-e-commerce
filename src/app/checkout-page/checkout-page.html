@@ -163,14 +163,18 @@
     }
     <!--  -->
     @if (!enableBuying()) {
-    <p class="error-message">Escolha uma opção de frete e de pagamento para prosseguir</p>
+    <p class="error-message">You must choose a shipping and payment option to proceed</p>
+    }
+    <!--  -->
+    @if (!isLoggedIn) {
+    <p class="error-message">You must be logged in to complete your purchase</p>
     }
 
     <button
       class="primary-btn"
       (click)="finishPurchase()"
       routerLink="/purchase-complete"
-      [disabled]="!enableBuying()"
+      [disabled]="!enableBuying() || !isLoggedIn"
     >
       <fa-icon [icon]="faBasket" />
       Finish purchase

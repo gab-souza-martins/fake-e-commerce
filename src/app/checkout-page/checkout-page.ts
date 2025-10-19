@@ -13,6 +13,7 @@ import {
   faCreditCard,
 } from '@fortawesome/free-solid-svg-icons';
 import { CheckoutItem } from '../components/checkout-item/checkout-item';
+import { LoginService } from '../services/login-service';
 
 @Component({
   selector: 'app-checkout-page',
@@ -42,7 +43,7 @@ export class CheckoutPage {
   faQrcode = faQrcode;
   faCreditCard = faCreditCard;
 
-  constructor(private cartStorage: CartStorage) {}
+  constructor(private cartStorage: CartStorage, private loginService: LoginService) {}
 
   get cartItems() {
     return this.cartStorage.getCart();
@@ -99,5 +100,9 @@ export class CheckoutPage {
 
   finishPurchase() {
     this.cartStorage.clearCart();
+  }
+
+  get isLoggedIn(): boolean {
+    return this.loginService.getIsLoggedIn();
   }
 }
