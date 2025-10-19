@@ -66,7 +66,7 @@
       <!--  -->
       @if (cartItems&&cartItems.length > 0){
       <div class="cart-btns">
-        <a routerLink="checkout" class="primary-btn btn-checkout">
+        <a routerLink="checkout" class="primary-btn sm-primary-btn">
           <fa-icon [icon]="faCreditCard" />
           Checkout
         </a>
@@ -81,7 +81,12 @@
 
     <div class="off-grid off-grid-right" [ngClass]="{ shown: userOpen }">
       @if (!isLoggedIn) {
-      <p class="empty-message">You are not logged in</p>
+      <p class="empty-message" style="text-align: start">You are not logged in</p>
+      <br />
+      <button class="primary-btn sm-primary-btn">
+        <fa-icon [icon]="faLogin" />
+        Login
+      </button>
       }
     </div>
   </nav>

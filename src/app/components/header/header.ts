@@ -8,6 +8,8 @@ import {
   faX,
   faCartShopping,
   faUser,
+  faRightToBracket,
+  faRightFromBracket,
   faTrash,
   faCreditCard,
 } from '@fortawesome/free-solid-svg-icons';
@@ -27,6 +29,8 @@ export class Header {
   faX = faX;
   faCart = faCartShopping;
   faUser = faUser;
+  faLogin = faRightToBracket;
+  faLogout = faRightFromBracket;
   faTrash = faTrash;
   faCreditCard = faCreditCard;
 
