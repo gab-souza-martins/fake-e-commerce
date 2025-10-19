@@ -22,6 +22,10 @@ export class LoginService {
     }
   }
 
+  getIsLoggedIn(): boolean {
+    return this.getUserToken() !== null;
+  }
+
   logIn(user: User): boolean {
     if (user) {
       this.saveUserToken(user.token);

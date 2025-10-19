@@ -80,7 +80,9 @@
     </div>
 
     <div class="off-grid off-grid-right" [ngClass]="{ shown: userOpen }">
-      <p class="empty-message">User profile coming soon!</p>
+      @if (!isLoggedIn) {
+      <p class="empty-message">You are not logged in</p>
+      }
     </div>
   </nav>
 </header>

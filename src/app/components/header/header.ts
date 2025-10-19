@@ -14,6 +14,7 @@ import {
 import { CartStorage } from '../../services/cart-storage';
 import { CartItemComponent } from '../cart-item/cart-item';
 import { CartItem } from '../../types/cart-item.type';
+import { LoginService } from '../../services/login-service';
 
 @Component({
   selector: 'app-header',
@@ -34,7 +35,11 @@ export class Header {
   cartOpen = false;
   userOpen = false;
 
-  constructor(private breakpointService: BreakpointObserver, private cartStorage: CartStorage) {}
+  constructor(
+    private breakpointService: BreakpointObserver,
+    private cartStorage: CartStorage,
+    private loginService: LoginService
+  ) {}
 
   ngOnInit(): void {
     this.breakpointService
@@ -66,5 +71,9 @@ export class Header {
     }
 
     return quantity;
+  }
+
+  get isLoggedIn(): boolean {
+    return this.loginService.getIsLoggedIn();
   }
 }
