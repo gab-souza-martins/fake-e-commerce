@@ -2,7 +2,7 @@
   <nav [ngClass]="{ desktopLayout: desktopNavigationActive }">
     <button
       aria-label="Open navigation"
-      class="btn btn-open-mobile-nav"
+      class="icon-btn btn-open-mobile-nav"
       [ngClass]="{ invisible: desktopNavigationActive }"
       (click)="mobileNavigationActive = true"
     >
@@ -18,7 +18,7 @@
     >
       <button
         aria-label="Close navigation"
-        class="btn btn-close-mobile-nav"
+        class="icon-btn btn-close-mobile-nav"
         (click)="mobileNavigationActive = false"
       >
         <fa-icon [icon]="faX" />
@@ -39,7 +39,7 @@
     </ul>
 
     <div>
-      <button aria-label="See cart" class="btn btn-cart" (click)="cartOpen = !cartOpen">
+      <button aria-label="See cart" class="icon-btn btn-cart" (click)="cartOpen = !cartOpen">
         <fa-icon [icon]="faCart" />
         @if (cartItems&&cartItems.length > 0) {<span class="cart-badge"> {{ itemQuantity }} </span>}
       </button>
@@ -59,7 +59,7 @@
           Checkout
         </a>
 
-        <button class="btn btn-clear-cart" (click)="clearCart()">
+        <button class="rose-btn btn-clear-cart" (click)="clearCart()">
           <fa-icon [icon]="faTrash" />
           Clear cart
         </button>

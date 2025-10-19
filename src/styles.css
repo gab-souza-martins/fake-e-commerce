@@ -40,3 +40,17 @@
   background-color: var(--gray-color);
   cursor: auto;
 }
+
+.rose-btn {
+  background: none;
+  border: none;
+  color: var(--rose-color);
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+.rose-btn:hover {
+  color: var(--rose-color-light);
+}
+.rose-btn:active {
+  color: var(--rose-color-dark);
+}
