@@ -39,12 +39,20 @@
     </ul>
 
     <div class="right-icons">
-      <button aria-label="See cart" class="icon-btn btn-cart" (click)="cartOpen = !cartOpen">
+      <button
+        aria-label="See cart"
+        class="icon-btn btn-cart"
+        (click)="userOpen = false; cartOpen = !cartOpen"
+      >
         <fa-icon [icon]="faCart" />
         @if (cartItems&&cartItems.length > 0) {<span class="cart-badge"> {{ itemQuantity }} </span>}
       </button>
 
-      <button aria-label="See user" class="icon-btn">
+      <button
+        aria-label="See user"
+        class="icon-btn"
+        (click)="cartOpen = false; userOpen = !userOpen"
+      >
         <fa-icon [icon]="faUser" />
       </button>
     </div>
@@ -69,6 +77,10 @@
         </button>
       </div>
       }
+    </div>
+
+    <div class="off-grid user-container" [ngClass]="{ shown: userOpen }">
+      <p class="empty-message">User profile coming soon!</p>
     </div>
   </nav>
 </header>
