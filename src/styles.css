@@ -16,3 +16,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.primary-btn {
+  padding: 0.5em 1em;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 0.375em;
+  font-size: 1.25rem;
+  color: white;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+.primary-btn fa-icon {
+  color: inherit !important;
+}
+.primary-btn:hover {
+  background-color: var(--primary-color-light);
+}
+.primary-btn:active {
+  background-color: var(--primary-color-dark);
+}

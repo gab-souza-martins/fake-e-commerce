@@ -71,22 +71,3 @@ fa-icon {
   font-size: 2rem;
   font-weight: bold;
 }
-.cart-btn {
-  padding: 0.5em 1em;
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: 0.375em;
-  font-size: 1.25rem;
-  color: white;
-  cursor: pointer;
-  transition: all 250ms ease-in-out;
-}
-.cart-btn fa-icon {
-  color: inherit;
-}
-.cart-btn:hover {
-  background-color: var(--primary-color-light);
-}
-.cart-btn:active {
-  background-color: var(--primary-color-dark);
-}
