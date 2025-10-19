@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-login-page',
-  imports: [FontAwesomeModule, ReactiveFormsModule],
+  imports: [FontAwesomeModule, ReactiveFormsModule, NgClass],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css',
 })
@@ -18,7 +19,13 @@ export class LoginPage {
     passwordConfirm: ['', [Validators.required, Validators.minLength(8)]],
     postalCode: ['', [Validators.required, Validators.minLength(3)]],
   });
-  submitted = false;
+
+  get invalidUsername() {
+    return (
+      this.loginForm.get('username')?.invalid &&
+      (this.loginForm.get('username')?.touched || this.loginForm.get('username')?.dirty)
+    );
+  }
 
   faLogin = faRightToBracket;
 }
