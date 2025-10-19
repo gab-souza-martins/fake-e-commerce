@@ -38,10 +38,14 @@
       <li><a class="nav-link" routerLink="/category/electronics">Electronics</a></li>
     </ul>
 
-    <div>
+    <div class="right-icons">
       <button aria-label="See cart" class="icon-btn btn-cart" (click)="cartOpen = !cartOpen">
         <fa-icon [icon]="faCart" />
         @if (cartItems&&cartItems.length > 0) {<span class="cart-badge"> {{ itemQuantity }} </span>}
+      </button>
+
+      <button aria-label="See user" class="icon-btn">
+        <fa-icon [icon]="faUser" />
       </button>
     </div>
 

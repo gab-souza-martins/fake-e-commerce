@@ -40,6 +40,13 @@ nav.desktopLayout {
   transform: translateX(0rem);
 }
 
+.right-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
 .cart-container {
   top: 3rem;
   right: 1rem;
@@ -88,6 +95,7 @@ nav.desktopLayout {
   background: none;
   border: none;
   cursor: pointer;
+  transition: 150ms ease-in-out;
 }
 
 .btn-close-mobile-nav {

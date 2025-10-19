@@ -7,6 +7,7 @@ import {
   faBars,
   faX,
   faCartShopping,
+  faUser,
   faTrash,
   faCreditCard,
 } from '@fortawesome/free-solid-svg-icons';
@@ -24,6 +25,7 @@ export class Header {
   faBars = faBars;
   faX = faX;
   faCart = faCartShopping;
+  faUser = faUser;
   faTrash = faTrash;
   faCreditCard = faCreditCard;
 
