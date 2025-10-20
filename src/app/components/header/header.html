@@ -93,11 +93,11 @@
       <p>You are logged in as {{ loggedUser?.username }}</p>
       <p>Your email is {{ loggedUser?.email?.slice(0, 3)?.padEnd(15, '*') }}</p>
       <p>Your postal code is {{ loggedUser?.postalCode?.slice(0, 2)?.padEnd(10, '*') }}</p>
-      <br />}
+      <br />
       <button class="rose-btn" (click)="logOut()">
         <fa-icon [icon]="faLogout" />
-        Logout
-      </button>
+        Logout</button
+      >}
     </div>
   </nav>
 </header>
