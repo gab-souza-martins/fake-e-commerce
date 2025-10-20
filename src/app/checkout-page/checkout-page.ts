@@ -27,7 +27,7 @@ export class CheckoutPage {
   installments = signal<number>(1);
 
   enableBuying = computed(() => {
-    if (!this.shipping || this.shipping() <= 0 || !this.payment || this.payment() === '') {
+    if (!this.shipping || this.shipping() < 0 || !this.payment || this.payment() === '') {
       return false;
     }
     return true;
@@ -103,6 +103,6 @@ export class CheckoutPage {
   }
 
   get isLoggedIn(): boolean {
-    return this.loginService.getIsLoggedIn();
+    return this.loginService.isLoggedIn();
   }
 }

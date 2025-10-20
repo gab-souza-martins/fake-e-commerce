@@ -5,18 +5,30 @@ import { User } from '../types/user.type';
   providedIn: 'root',
 })
 export class LoginService {
-  private _isLoggedIn = signal<boolean>(false);
-  readonly isLoggedIn = this._isLoggedIn;
+  isLoggedIn = signal<boolean>(false);
+  user = signal<User | null>(null);
 
-  private _user = signal<User | null>(null);
-  readonly user = this._user;
+  constructor() {
+    const data = localStorage.getItem('loggedUser');
+    if (data) {
+      try {
+        const parsed = JSON.parse(data) as User;
+        this.user.set(parsed);
+        this.isLoggedIn.set(true);
+      } catch (e) {
+        console.error('Error parsing loggedUser from localStorage', e);
+        localStorage.removeItem('loggedUser');
+        this.user.set(null);
+        this.isLoggedIn.set(false);
+      }
+    }
+  }
 
   getUser(): User | null {
     try {
-      if (this._user) {
-        return this._user();
-      }
-      return null;
+      const data: string | null = localStorage.getItem('loggedUser');
+      this.user.set(data ? (JSON.parse(data) as User) : null);
+      return data ? (JSON.parse(data) as User) : null;
     } catch (e) {
       console.error('Error retrieving user token from local storage', e);
       return null;
@@ -24,14 +36,16 @@ export class LoginService {
   }
 
   getIsLoggedIn(): boolean {
-    return this._isLoggedIn();
+    const data: string | null = localStorage.getItem('loggedUser');
+    this.isLoggedIn.set(data ? true : false);
+    return data ? true : false;
   }
 
   logIn(user: User): boolean {
     if (user) {
       localStorage.setItem('loggedUser', JSON.stringify(user));
-      this._user.set(user);
-      this._isLoggedIn.set(true);
+      this.user.set(user);
+      this.isLoggedIn.set(true);
       return true;
     }
     return false;
@@ -40,8 +54,8 @@ export class LoginService {
   logOut(): void {
     try {
       localStorage.removeItem('loggedUser');
-      this._user.set(null);
-      this._isLoggedIn.set(false);
+      this.user.set(null);
+      this.isLoggedIn.set(false);
     } catch (e) {
       console.error('Error removing user token from local storage', e);
     }

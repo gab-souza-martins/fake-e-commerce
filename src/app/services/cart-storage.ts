@@ -16,7 +16,7 @@ export class CartStorage {
   getCart(): CartItem[] | null {
     try {
       const data: string | null = localStorage.getItem('localCart');
-      return data ? JSON.parse(data) : null;
+      return data ? (JSON.parse(data) as CartItem[]) : null;
     } catch (e) {
       console.error('Error reading from local storage', e);
       return null;
