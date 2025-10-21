@@ -4,6 +4,10 @@ Este é um projeto de demonstração de uma página de comércio online feita co
 
 ## Preview
 
+![Preview do aplicativo no desktop](public/screenshot-desktop.png)
+
+![Preview do aplicativo no mobile](public/screenshot-mobile.png)
+
 ## Acessando
 
 O site pode ser acessado através do seguinte link: https://gab-souza-martins.github.io/fake-e-commerce/
